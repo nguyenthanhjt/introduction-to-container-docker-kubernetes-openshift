@@ -1,0 +1,213 @@
+WEBVTT
+
+1
+00:00:00.757 --> 00:00:06.335
+[Music]
+
+2
+00:00:07.144 --> 00:00:11.344
+Welcome to this introductory course on Containers and Kubernetes.
+
+3
+00:00:11.344 --> 00:00:14.417
+My name is Alex Parker and I'm Upkar Lidder.
+
+4
+00:00:14.417 --> 00:00:19.819
+This course was made for anybody who wants to learn how to design, develop, deploy, manage
+
+5
+00:00:19.819 --> 00:00:23.775
+secure applications on public, private, and
+hybrid cloud platforms.
+
+6
+00:00:23.775 --> 00:00:28.779
+By the end of this course, you will not only
+have a running application on public cloud
+
+7
+00:00:28.779 --> 00:00:32.532
+but also have a really good understanding
+of Kubernetes and Containers.
+
+8
+00:00:32.532 --> 00:00:38.212
+Containerization is not a new technology,
+but it rose to greater prominence in 2013
+
+9
+00:00:38.212 --> 00:00:41.253
+with the release of Docker, and it hasn't
+stopped growing since.
+
+10
+00:00:41.253 --> 00:00:46.925
+In fact, containers have become the technology
+for modern cloud native development.
+
+11
+00:00:47.244 --> 00:00:53.687
+The analyst firm Gartner predicts that by
+2023 over 70 percent of global organizations
+
+12
+00:00:53.687 --> 00:00:57.325
+will be running more than two
+containerized applications in production,
+
+13
+00:00:57.325 --> 00:01:01.063
+up from less than twenty percent in 2019.
+
+14
+00:01:01.063 --> 00:01:07.052
+The Cloud Native Computing Foundation known as CNCF conducts annual surveys to discern
+
+15
+00:01:07.052 --> 00:01:11.003
+where and how cloud native technologies are being adopted.
+
+16
+00:01:11.003 --> 00:01:17.250
+The 2019 survey indicates that 84 percent
+of respondents are using containers in production
+
+17
+00:01:17.250 --> 00:01:24.826
+up from 74 percent in 2018; and 23 percent in the first survey in 2016.
+
+18
+00:01:24.826 --> 00:01:30.562
+These trends clearly demonstrate that containers
+aren't a passing fad or a niche technology
+
+19
+00:01:30.562 --> 00:01:35.840
+but an industry changing revolution that will
+impact organizations small and large, and
+
+20
+00:01:35.840 --> 00:01:37.461
+developers worldwide.
+
+21
+00:01:37.849 --> 00:01:43.709
+Likewise, Kubernetes, an open source platform for orchestrating running containers was developed
+
+22
+00:01:43.709 --> 00:01:48.000
+and contributed to the open source community by Google in 2015.
+
+23
+00:01:48.000 --> 00:01:52.360
+The Cloud Native Computing Foundation did a survey in 2019 and found that the number
+
+24
+00:01:52.360 --> 00:01:58.379
+of users or respondents who were interested in cloud native computing technologies went
+
+25
+00:01:58.379 --> 00:02:02.519
+up from 58 percent to 78 percent from the
+previous year.
+
+26
+00:02:02.724 --> 00:02:08.164
+Kubernetes is the third largest platform for number of committers on GitHub as well as
+
+27
+00:02:08.164 --> 00:02:13.394
+second largest for a number of issues and pull requests only after the Linux Kernel.
+
+28
+00:02:13.918 --> 00:02:19.251
+A thriving ecosystem surrounds the open source Kubernetes platform including applications
+
+29
+00:02:19.251 --> 00:02:24.404
+for cloud security, service mesh as well as other cloud native technologies.
+
+30
+00:02:24.826 --> 00:02:29.691
+As a result of these things, Kubernetes and Containers have become the de facto standards
+
+31
+00:02:29.691 --> 00:02:34.431
+when talking about cloud native applications, also making them the foundation for any cloud
+
+32
+00:02:34.431 --> 00:02:36.000
+computing related learning.
+
+33
+00:02:36.000 --> 00:02:41.460
+This course will introduce you to Containers, Docker, and container registries, to get you
+
+34
+00:02:41.460 --> 00:02:44.119
+started with the foundations of this technology.
+
+35
+00:02:44.386 --> 00:02:49.042
+Then you'll learn about the need for container orchestration in Kubernetes specifically,
+
+36
+00:02:49.042 --> 00:02:53.783
+including its architecture, the different
+resources you can deploy in Kubernetes, and
+
+37
+00:02:53.783 --> 00:02:58.043
+how to put those pieces together to deploy a working application.
+
+38
+00:02:58.043 --> 00:03:03.000
+And finally, you'll learn about the Kubernetes ecosystem, including Red Hat OpenShift and
+
+39
+00:03:03.000 --> 00:03:08.210
+Istio, and how these tools can make your journey to containerization, and your subsequent use
+
+40
+00:03:08.210 --> 00:03:10.460
+of containers so much better.
+
+41
+00:03:10.460 --> 00:03:14.700
+The course contains several hands-on labs that will help you apply the content you learn.
+
+42
+00:03:14.949 --> 00:03:19.548
+If you do not have the resources to set up
+a Kubernetes cluster, the course will provide
+
+43
+00:03:19.548 --> 00:03:23.892
+an environment free of charge which will help you to finish the labs.
+
+44
+00:03:23.892 --> 00:03:28.753
+The prerequisites for this course include
+basic computer and cloud literacy,
+
+45
+00:03:29.026 --> 00:03:32.584
+as well as an understanding of core cloud
+concepts.
+
+46
+00:03:32.584 --> 00:03:37.442
+In addition, understanding of the command line and how to use shell commands will greatly
+
+47
+00:03:37.442 --> 00:03:39.574
+benefit you during this course.
+
+48
+00:03:39.574 --> 00:03:40.813
+Let's get started!
+
+49
+00:03:40.813 --> 00:03:42.000
+Let's get started!
