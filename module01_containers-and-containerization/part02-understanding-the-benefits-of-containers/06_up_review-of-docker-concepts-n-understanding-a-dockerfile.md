@@ -1,4 +1,4 @@
-# Review of Docker Concepts and Understanding a Dockerfile
+# Module 1 - Part 2 - Section 6: Reading - Review of Docker Concepts and Understanding a Dockerfile
 **Estimated time needed**: 30 minutes
 
 This reading is designed to enhance your understanding of Docker concepts and guide you through the process of comprehending a Dockerfile.
