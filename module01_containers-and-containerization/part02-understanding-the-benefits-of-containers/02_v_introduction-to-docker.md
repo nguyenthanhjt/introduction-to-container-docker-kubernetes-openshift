@@ -1,4 +1,4 @@
-# Module 01 - Part 02 - Section 02 - Video: Introduction to Docker
+# Module 01 - Part 02 - Section 02: Video - Introduction to Docker
 
 ![x](resources/02/img-07_introduction-to-docker-agenda.png)
 

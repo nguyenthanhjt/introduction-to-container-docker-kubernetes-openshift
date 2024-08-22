@@ -1,4 +1,4 @@
-# Module 01 - Part 02 - Section 01: Introduction to Containers
+# Module 01 - Part 02 - Section 01: Video - Introduction to Containers
 
 ![x](resources/01/img-01.png)
 
