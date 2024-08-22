@@ -1,0 +1,453 @@
+WEBVTT
+
+1
+00:00:06.500 --> 00:00:10.540
+Welcome to introduction
+to Docker objects.
+
+2
+00:00:10.540 --> 00:00:12.240
+After watching this video,
+
+3
+00:00:12.240 --> 00:00:16.320
+you will be able to identify
+and describe Docker objects,
+
+4
+00:00:16.320 --> 00:00:19.150
+identify essential
+Docker file commands,
+
+5
+00:00:19.150 --> 00:00:21.340
+explain container image naming,
+
+6
+00:00:21.340 --> 00:00:23.380
+and describe how Docker
+
+7
+00:00:23.380 --> 00:00:26.325
+uses networks,
+storage, and plugins.
+
+8
+00:00:26.325 --> 00:00:28.500
+Docker contains objects such as
+
+9
+00:00:28.500 --> 00:00:31.240
+Docker file, images, container,
+
+10
+00:00:31.240 --> 00:00:34.740
+network, storage volumes,
+and other objects,
+
+11
+00:00:34.740 --> 00:00:37.145
+such as plugins and add-ons.
+
+12
+00:00:37.145 --> 00:00:39.380
+A Docker file is
+a text file that
+
+13
+00:00:39.380 --> 00:00:42.100
+contains instructions
+needed to create an image.
+
+14
+00:00:42.100 --> 00:00:44.400
+You can create a
+Docker file using
+
+15
+00:00:44.400 --> 00:00:46.960
+any editor from the
+console or terminal.
+
+16
+00:00:46.960 --> 00:00:48.460
+Let's go over several of
+
+17
+00:00:48.460 --> 00:00:51.220
+the essential instructions
+that Docker provides.
+
+18
+00:00:51.220 --> 00:00:53.760
+A Docker file must
+always begin with a
+
+19
+00:00:53.760 --> 00:00:57.000
+FROM instruction that
+defines a base image.
+
+20
+00:00:57.000 --> 00:01:00.180
+Often the base image is
+from a public repository,
+
+21
+00:01:00.180 --> 00:01:01.820
+like an operating system or
+
+22
+00:01:01.820 --> 00:01:05.325
+a specific language
+like Go or Node.js.
+
+23
+00:01:05.325 --> 00:01:08.040
+The RUN instruction
+executes commands.
+
+24
+00:01:08.040 --> 00:01:10.220
+The CMD instruction defines
+
+25
+00:01:10.220 --> 00:01:12.220
+a default command for execution.
+
+26
+00:01:12.220 --> 00:01:16.460
+A Docker file should have
+only one CMD instruction.
+
+27
+00:01:16.460 --> 00:01:20.020
+If the Docker file has
+several CMD instructions,
+
+28
+00:01:20.020 --> 00:01:23.000
+only the last CMD instruction
+will take effect.
+
+29
+00:01:23.000 --> 00:01:26.300
+Next, let's learn
+about Docker images.
+
+30
+00:01:26.300 --> 00:01:27.780
+A Docker image is
+
+31
+00:01:27.780 --> 00:01:29.060
+a read only template with
+
+32
+00:01:29.060 --> 00:01:31.520
+instructions for creating
+a Docker container.
+
+33
+00:01:31.520 --> 00:01:34.720
+The Docker file provides
+instructions to build the image,
+
+34
+00:01:34.720 --> 00:01:36.400
+and each Docker instruction
+
+35
+00:01:36.400 --> 00:01:38.640
+creates a new layer
+in the image.
+
+36
+00:01:38.640 --> 00:01:41.720
+When you change the Docker
+file and rebuild the image,
+
+37
+00:01:41.720 --> 00:01:45.160
+the Docker engine only
+rebuilds the changed layers.
+
+38
+00:01:45.160 --> 00:01:47.120
+Images can share these layers,
+
+39
+00:01:47.120 --> 00:01:48.860
+which saves a lot of disk space,
+
+40
+00:01:48.860 --> 00:01:50.460
+as well as network bandwidth
+
+41
+00:01:50.460 --> 00:01:52.665
+when sending and
+receiving images.
+
+42
+00:01:52.665 --> 00:01:54.950
+When you instantiate this image,
+
+43
+00:01:54.950 --> 00:01:56.690
+you get a running container.
+
+44
+00:01:56.690 --> 00:01:59.570
+At this point, a
+writable container layer
+
+45
+00:01:59.570 --> 00:02:01.970
+is placed on top of
+the read only layers,
+
+46
+00:02:01.970 --> 00:02:03.990
+and the writable layer
+is needed because
+
+47
+00:02:03.990 --> 00:02:06.840
+containers are not
+immutable as images.
+
+48
+00:02:06.840 --> 00:02:10.300
+Now, let's learn about
+how images are named.
+
+49
+00:02:10.300 --> 00:02:12.640
+An image name has
+a unique format
+
+50
+00:02:12.640 --> 00:02:14.380
+that consists of three parts,
+
+51
+00:02:14.380 --> 00:02:17.520
+the host name, the
+repository, and the tag.
+
+52
+00:02:17.520 --> 00:02:20.860
+The host name identifies
+the image registry.
+
+53
+00:02:20.860 --> 00:02:24.660
+A repository is a group of
+related container images,
+
+54
+00:02:24.660 --> 00:02:26.920
+and the tag provides
+information about
+
+55
+00:02:26.920 --> 00:02:29.800
+a specific version or
+variant of an image.
+
+56
+00:02:29.800 --> 00:02:35.480
+Consider the image name
+docker.io/ubuntu:18.04.
+
+57
+00:02:36.830 --> 00:02:39.960
+The host name docker.io
+
+58
+00:02:39.960 --> 00:02:42.640
+refers to the Docker
+Hub registry.
+
+59
+00:02:42.640 --> 00:02:44.980
+When using the Docker CLI,
+
+60
+00:02:44.980 --> 00:02:48.140
+you can exclude the
+docker.io host name.
+
+61
+00:02:48.140 --> 00:02:52.760
+The repository name Ubuntu
+indicates the Ubuntu image.
+
+62
+00:02:52.760 --> 00:02:57.160
+Finally, the tag,
+shown here as 18.04,
+
+63
+00:02:57.160 --> 00:03:00.060
+represents the installed
+Ubuntu version.
+
+64
+00:03:00.060 --> 00:03:03.215
+Now, let's learn about
+Docker containers.
+
+65
+00:03:03.215 --> 00:03:05.560
+What is a Docker container?
+
+66
+00:03:05.560 --> 00:03:09.020
+A Docker container is a
+runnable instance of an image.
+
+67
+00:03:09.020 --> 00:03:13.020
+You can use the Docker
+API or CLI to create,
+
+68
+00:03:13.020 --> 00:03:16.215
+start, stop, or delete an image.
+
+69
+00:03:16.215 --> 00:03:18.430
+You can connect to
+multiple networks,
+
+70
+00:03:18.430 --> 00:03:20.290
+attach storage to the container,
+
+71
+00:03:20.290 --> 00:03:23.630
+or create a new image based
+on its current state.
+
+72
+00:03:23.630 --> 00:03:25.390
+Docker keeps containers well
+
+73
+00:03:25.390 --> 00:03:28.350
+isolated from each other
+and their host machine.
+
+74
+00:03:28.350 --> 00:03:30.650
+When using Docker, networks
+
+75
+00:03:30.650 --> 00:03:32.990
+help isolate container
+communications.
+
+76
+00:03:32.990 --> 00:03:35.250
+By default, data doesn't
+
+77
+00:03:35.250 --> 00:03:37.810
+persist when the container
+no longer exists.
+
+78
+00:03:37.810 --> 00:03:40.450
+Docker uses volumes
+and bind mounts
+
+79
+00:03:40.450 --> 00:03:43.430
+to persist data even
+after a container stops,
+
+80
+00:03:43.430 --> 00:03:46.220
+and plugins such as
+storage plugins,
+
+81
+00:03:46.220 --> 00:03:47.590
+provide the ability to connect
+
+82
+00:03:47.590 --> 00:03:49.840
+to external storage platforms.
+
+83
+00:03:49.840 --> 00:03:52.435
+In this video you learn that
+
+84
+00:03:52.435 --> 00:03:55.550
+Docker contains objects
+such as Docker files,
+
+85
+00:03:55.550 --> 00:03:59.310
+images, containers,
+networks, storage volumes,
+
+86
+00:03:59.310 --> 00:04:02.880
+and other objects, such
+as plugins and add-ons.
+
+87
+00:04:02.880 --> 00:04:06.075
+Essential Docker
+instructions include FROM,
+
+88
+00:04:06.075 --> 00:04:08.100
+RUN, and CMD.
+
+89
+00:04:08.100 --> 00:04:11.410
+A Docker container is a
+runnable instance of an image.
+
+90
+00:04:11.410 --> 00:04:15.070
+An image name format consists
+of three identifiers,
+
+91
+00:04:15.070 --> 00:04:18.455
+the host name, the
+repository, and the tag.
+
+92
+00:04:18.455 --> 00:04:22.340
+Docker uses networks to isolate
+container communications.
+
+93
+00:04:22.340 --> 00:04:25.140
+Docker uses volumes
+and binds mounts to
+
+94
+00:04:25.140 --> 00:04:28.640
+persist data even after a
+container stops running.
+
+95
+00:04:28.640 --> 00:04:31.335
+Plugins, such as
+storage plugins,
+
+96
+00:04:31.335 --> 00:04:32.960
+provide the ability to connect
+
+97
+00:04:32.960 --> 00:04:35.780
+to external storage platforms.
