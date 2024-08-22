@@ -1,21 +1,21 @@
 # Module 01 - Part 02 - Section 01: Introduction to Containers
 
-![x](resources/img-01.png)
+![x](resources/01/img-01.png)
 
 ## What are Containers?
 
 Containers are a standard unit of software that encapsulates everything needed to build, ship, and run applications.
 
-![x](resources/img-02.png)
+![x](resources/01/img-02.png)
 
 They are operating system-independent and can run on Windows, Linux, or macOS.
 
 Containers are also programming language and IDE independent, supporting languages like Python, Node, Java, and more.
 
 
-![x](resources/img-04_container-characteristics.png)
+![x](resources/01/img-04_container-characteristics.png)
 
-![x](resources/img-05_containers-offer-easy-portability.png)
+![x](resources/01/img-05_containers-offer-easy-portability.png)
 
 ## Benefits of Containers
 
@@ -26,7 +26,7 @@ Containers enable organizations to:
 - Port across different environments.
 - Support next-gen applications, including microservices.
 
-![x](resources/img-03-why-use-containers.png)
+![x](resources/01/img-03-why-use-containers.png)
 
 --- 
 

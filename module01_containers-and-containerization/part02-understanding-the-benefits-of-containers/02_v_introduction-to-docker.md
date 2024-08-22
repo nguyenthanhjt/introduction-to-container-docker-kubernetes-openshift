@@ -1,6 +1,6 @@
 # Module 01 - Part 02 - Section 02 - Video: Introduction to Docker
 
-![x](resources/img-07_introduction-to-docker-agenda.png)
+![x](resources/02/img-07_introduction-to-docker-agenda.png)
 
 ## What is Docker?
 
@@ -8,13 +8,13 @@ Available since 2013, Docker is an open platform for developing, shipping, and r
 
 It became popular with developers due to its simple architecture, massive scalability, and portability across multiple platforms, environments, and locations.
 
-![x](resources/img-08_docker-defined.png)
+![x](resources/02/img-08_docker-defined.png)
 
-![x](resources/img-09_docker-become-popular.png)
+![x](resources/02/img-09_docker-become-popular.png)
 
-![x](resources/img-10_docker-architecture.png)
+![x](resources/02/img-10_docker-architecture.png)
 
-![x](resources/img-11_docker-underlying-technology.png)
+![x](resources/02/img-11_docker-underlying-technology.png)
 
 ### Docker add-ons
 
@@ -25,7 +25,7 @@ Docker methodology inspired additional innovations:
 
 ## Benefits of Docker
 
-![x](resources/img-12_docker-benefits.png)
+![x](resources/02/img-12_docker-benefits.png)
 
 Docker offers several benefits:
 - Consistent and isolated environments result in stable application deployments.
@@ -39,7 +39,7 @@ Docker offers several benefits:
 
 ## Challenges of Docker
 
-![x](resources/img-13_docker_challenging-usecases.png)
+![x](resources/02/img-13_docker_challenging-usecases.png)
 
 Docker is not suitable for applications that:
 - Require high performance or security.
@@ -49,4 +49,4 @@ Docker is not suitable for applications that:
 
 ## Summary - Recap
 
-![x](resources/img-14_introduction-to-docker-recap.png)
+![x](resources/02/img-14_introduction-to-docker-recap.png)
