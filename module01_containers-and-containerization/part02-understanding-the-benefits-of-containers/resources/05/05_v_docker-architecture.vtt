@@ -1,0 +1,285 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:07.496
+[MUSIC]
+
+2
+00:00:07.496 --> 00:00:10.693
+Hello and welcome to Docker Architecture.
+
+3
+00:00:10.693 --> 00:00:12.520
+After watching this video,
+
+4
+00:00:12.520 --> 00:00:17.020
+you will be able identify the components
+of the Docker architecture.
+
+5
+00:00:17.020 --> 00:00:21.390
+Explain the features of the Docker
+architecture components, and
+
+6
+00:00:21.390 --> 00:00:25.222
+describe the process of
+containerization using Docker.
+
+7
+00:00:25.222 --> 00:00:29.271
+The Docker client server architecture
+provides a complete application
+
+8
+00:00:29.271 --> 00:00:30.142
+environment.
+
+9
+00:00:30.142 --> 00:00:35.106
+Docker components include the client,
+the host, and the registry.
+
+10
+00:00:35.106 --> 00:00:38.487
+Let's take a high level
+view of how docker works.
+
+11
+00:00:38.487 --> 00:00:43.101
+First, you'll use either the Docker
+command line interface or
+
+12
+00:00:43.101 --> 00:00:48.828
+REST APIs via the Docker client to send
+instructions to the Docker host server,
+
+13
+00:00:48.828 --> 00:00:50.805
+commonly called the host.
+
+14
+00:00:50.805 --> 00:00:54.929
+The Docker host contains
+the daemon known as dockered.
+
+15
+00:00:54.929 --> 00:00:58.058
+The daemon listens for
+Docker API requests or
+
+16
+00:00:58.058 --> 00:01:02.351
+commands such as docker run,
+and processes those commands.
+
+17
+00:01:02.351 --> 00:01:05.791
+The daemon does the heavy
+lifting to build, run, and
+
+18
+00:01:05.791 --> 00:01:07.942
+distribute docker containers.
+
+19
+00:01:07.942 --> 00:01:12.004
+Then, Docker stores the container
+images in a registry.
+
+20
+00:01:12.004 --> 00:01:17.119
+The Docker host also includes and
+manages images, containers,
+
+21
+00:01:17.119 --> 00:01:21.583
+namespace networks,
+storage plugins, and add-ons.
+
+22
+00:01:21.583 --> 00:01:25.370
+You can use the Docker client
+to communicate with local and
+
+23
+00:01:25.370 --> 00:01:26.843
+remote docker hosts.
+
+24
+00:01:26.843 --> 00:01:30.515
+You can run the Docker client and
+daemon on the same system or
+
+25
+00:01:30.515 --> 00:01:34.116
+connect your docker client to
+a remote Docker daemon, and
+
+26
+00:01:34.116 --> 00:01:39.362
+Docker daemons can also communicate with
+other daemons to manage docker services.
+
+27
+00:01:39.362 --> 00:01:43.070
+Docker stores and
+distributes images in a registry.
+
+28
+00:01:43.070 --> 00:01:46.877
+Registry access is either public,
+such as Docker hub,
+
+29
+00:01:46.877 --> 00:01:50.126
+which is accessible by everyone,
+or private.
+
+30
+00:01:50.126 --> 00:01:54.504
+Enterprises usually opt to use a private
+registry for security reasons.
+
+31
+00:01:54.504 --> 00:02:00.232
+And registry locations are hosted using
+a third-party provider such as IBM Cloud
+
+32
+00:02:00.232 --> 00:02:05.804
+container registry, or self-hosted in
+private data centers or on the cloud.
+
+33
+00:02:05.804 --> 00:02:10.334
+Next, let's learn about moving
+images into the registry.
+
+34
+00:02:10.334 --> 00:02:14.830
+First, developers build and
+push the images using automation or
+
+35
+00:02:14.830 --> 00:02:19.498
+a build pipeline into a registry
+where Docker stores these images.
+
+36
+00:02:19.498 --> 00:02:26.232
+Then, local machines, cloud systems, and
+on premises systems can pull those images.
+
+37
+00:02:26.232 --> 00:02:29.112
+Let's examine the process in more detail.
+
+38
+00:02:29.112 --> 00:02:32.839
+Here is a visual representation
+of the Docker architecture,
+
+39
+00:02:32.839 --> 00:02:37.640
+which consists of the client, the Docker
+host, including the Docker daemon,
+
+40
+00:02:37.640 --> 00:02:40.737
+and the registry with its
+existing stored images.
+
+41
+00:02:40.737 --> 00:02:43.699
+Let's check out
+the containerization process.
+
+42
+00:02:43.699 --> 00:02:47.310
+Here's how you use Docker to
+create a container image.
+
+43
+00:02:47.310 --> 00:02:51.396
+First, use an existing base image or
+a Docker file.
+
+44
+00:02:51.396 --> 00:02:56.292
+Then issue the build command that
+creates a container image with a name.
+
+45
+00:02:56.292 --> 00:03:00.751
+Next, issue the push command to
+store the image to the registry.
+
+46
+00:03:00.751 --> 00:03:04.763
+The host first checks locally if
+the image is already available, and
+
+47
+00:03:04.763 --> 00:03:08.999
+then issues the run command with
+the image name to create the container.
+
+48
+00:03:08.999 --> 00:03:11.725
+If the image is unavailable
+within the host,
+
+49
+00:03:11.725 --> 00:03:16.255
+the Docker client connects to the registry
+and pulls the image to the host.
+
+50
+00:03:16.255 --> 00:03:20.185
+The daemon then creates a running
+container using the image.
+
+51
+00:03:20.185 --> 00:03:25.715
+In this video, you learned that Docker
+architecture consists of a Docker client,
+
+52
+00:03:25.715 --> 00:03:27.848
+a Docker host, and a registry.
+
+53
+00:03:27.848 --> 00:03:32.613
+The client interacts with the host
+using commands and REST APIs.
+
+54
+00:03:32.613 --> 00:03:36.868
+The Docker host includes the daemon
+commonly called dockerd.
+
+55
+00:03:36.868 --> 00:03:41.836
+The docker host also manages images,
+containers, namespaces,
+
+56
+00:03:41.836 --> 00:03:45.738
+networks, storage,
+plugins, and add-ons, and
+
+57
+00:03:45.738 --> 00:03:51.257
+containerization is the process used
+to build, push, and run an image.
+
+58
+00:03:51.257 --> 00:03:53.261
+To create a running container.
+
+59
+00:03:53.261 --> 00:03:53.761
+[MUSIC]
