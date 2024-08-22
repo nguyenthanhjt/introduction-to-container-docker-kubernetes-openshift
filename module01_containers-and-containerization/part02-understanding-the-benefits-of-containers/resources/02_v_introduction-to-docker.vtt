@@ -1,0 +1,234 @@
+WEBVTT
+
+1
+00:00:07.400 --> 00:00:10.454
+[MUSIC]
+Welcome to Introduction to Docker.
+
+2
+00:00:10.454 --> 00:00:14.938
+After watching this video you will
+be able to, define what Docker is,
+
+3
+00:00:14.938 --> 00:00:19.802
+describe the Docker process and
+underlying technology, list the benefits
+
+4
+00:00:19.802 --> 00:00:25.474
+of Docker containers, and identify
+the challenges of Docker containers.
+
+5
+00:00:25.474 --> 00:00:27.234
+Available since 2013,
+
+6
+00:00:27.234 --> 00:00:32.587
+the official Docker definition paraphrased
+states that Docker is an open platform for
+
+7
+00:00:32.587 --> 00:00:37.594
+developing, shipping, and
+running applications as containers.
+
+8
+00:00:37.594 --> 00:00:41.830
+Docker became popular with developers
+because of its simple architecture,
+
+9
+00:00:41.830 --> 00:00:46.327
+massive scalability, and portability
+on multiple platforms, environments,
+
+10
+00:00:46.327 --> 00:00:48.114
+and locations.
+
+11
+00:00:48.114 --> 00:00:52.578
+Docker isolates applications from
+infrastructure, including the hardware,
+
+12
+00:00:52.578 --> 00:00:56.174
+the operating system, and
+the container runtime.
+
+13
+00:00:56.174 --> 00:00:59.094
+Docker is written in the Go
+programming language.
+
+14
+00:00:59.094 --> 00:01:03.134
+Docker uses Linux kernel's features
+to deliver its functionality.
+
+15
+00:01:03.134 --> 00:01:08.331
+Docker also uses namespaces to provide an
+isolated workspace called the container,
+
+16
+00:01:08.331 --> 00:01:12.226
+and Docker creates a set of namespaces for
+every container, and
+
+17
+00:01:12.226 --> 00:01:17.964
+each aspect runs in a separate namespace
+with access limited to that namespace.
+
+18
+00:01:17.964 --> 00:01:22.044
+Docker methodology has inspired
+additional innovations,
+
+19
+00:01:22.044 --> 00:01:26.844
+including complementary tools such
+as Docker CLI, Docker compose and
+
+20
+00:01:26.844 --> 00:01:31.171
+Prometheus, and
+various plugins including storage plugins.
+
+21
+00:01:31.171 --> 00:01:35.753
+Orchestration technologies using
+Docker swarm or Kubernetes, and
+
+22
+00:01:35.753 --> 00:01:41.124
+development methodologies using
+microservices and serverless.
+
+23
+00:01:41.124 --> 00:01:43.676
+Docker offers the following benefits.
+
+24
+00:01:43.676 --> 00:01:45.151
+Docker's consistent and
+
+25
+00:01:45.151 --> 00:01:49.424
+isolated environments result in
+stable application deployments.
+
+26
+00:01:49.424 --> 00:01:51.648
+Deployments occur in seconds.
+
+27
+00:01:51.648 --> 00:01:54.360
+Because Docker images are small and
+reusable,
+
+28
+00:01:54.360 --> 00:01:58.837
+they significantly speed up the
+development process, and Docker automation
+
+29
+00:01:58.837 --> 00:02:03.424
+capabilities help eliminate errors,
+simplifying the maintenance cycle.
+
+30
+00:02:03.424 --> 00:02:07.704
+Docker supports Agile and
+CI/CD DevOps practices.
+
+31
+00:02:07.704 --> 00:02:12.854
+Docker's easy versioning speeds up
+testing, rollbacks, and redeployments.
+
+32
+00:02:12.854 --> 00:02:17.934
+Docker helps segment applications for
+easy refresh, cleanup, and repair.
+
+33
+00:02:17.934 --> 00:02:23.250
+Developers collaborate to resolve issues
+faster and scale containers when needed,
+
+34
+00:02:23.250 --> 00:02:28.614
+and Docker images are platform
+independent, so they are highly portable.
+
+35
+00:02:28.614 --> 00:02:33.057
+Docker is not a good fit for
+applications with these qualities,
+
+36
+00:02:33.057 --> 00:02:38.488
+require high performance or security,
+are based on Monolith architecture,
+
+37
+00:02:38.488 --> 00:02:44.594
+use rich GUI features, or perform
+standard desktop or limited functions.
+
+38
+00:02:44.594 --> 00:02:49.548
+In this video, you learned that,
+Docker is an open platform for developing,
+
+39
+00:02:49.548 --> 00:02:53.434
+shipping, and
+running applications as containers.
+
+40
+00:02:53.434 --> 00:02:57.794
+Docker speeds up the deployment
+process across multiple environments.
+
+41
+00:02:57.794 --> 00:03:02.313
+Docker uses namespaces technology to
+provide an isolated workspace called
+
+42
+00:03:02.313 --> 00:03:03.450
+the container.
+
+43
+00:03:03.450 --> 00:03:06.907
+Docker creates a set of namespaces for
+every container, and
+
+44
+00:03:06.907 --> 00:03:11.706
+each aspect runs in a separate namespace
+with access limited to that namespace.
+
+45
+00:03:11.706 --> 00:03:14.846
+Docker supports Agile and
+CI/CD DevOps practices.
+
+46
+00:03:14.846 --> 00:03:19.242
+And lastly, Docker containers are not
+a good fit for applications based on
+
+47
+00:03:19.242 --> 00:03:24.285
+monolithic architecture or applications
+that require high performance security.
+
+48
+00:03:24.285 --> 00:03:24.785
+[MUSIC]
