@@ -1,0 +1,736 @@
+
+WEBVTT
+
+1
+00:00:06.290 --> 00:00:09.725
+Welcome to container
+orchestration.
+
+2
+00:00:09.725 --> 00:00:11.220
+After watching this video,
+
+3
+00:00:11.220 --> 00:00:13.160
+you will be able to define
+
+4
+00:00:13.160 --> 00:00:15.130
+the challenges of
+container management,
+
+5
+00:00:15.130 --> 00:00:18.020
+determine when container
+orchestration is needed,
+
+6
+00:00:18.020 --> 00:00:21.740
+and demonstrate container
+orchestration benefits.
+
+7
+00:00:21.740 --> 00:00:24.940
+Everyone's container journey
+starts with one container.
+
+8
+00:00:24.940 --> 00:00:27.940
+However, things don't
+stay this way for long.
+
+9
+00:00:27.940 --> 00:00:30.800
+Over time, new applications
+are written and
+
+10
+00:00:30.800 --> 00:00:34.135
+projects are deployed globally
+to increase availability.
+
+11
+00:00:34.135 --> 00:00:35.830
+That one initial container
+
+12
+00:00:35.830 --> 00:00:38.380
+inevitably becomes
+several containers.
+
+13
+00:00:38.380 --> 00:00:41.270
+Initially, that growth
+is easy to handle,
+
+14
+00:00:41.270 --> 00:00:43.310
+but soon it's overwhelming.
+
+15
+00:00:43.310 --> 00:00:46.450
+Consider connecting,
+managing, and scaling
+
+16
+00:00:46.450 --> 00:00:48.630
+hundreds or thousands
+of containers into
+
+17
+00:00:48.630 --> 00:00:51.985
+a large application like
+a database or web app.
+
+18
+00:00:51.985 --> 00:00:54.390
+This can easily get
+out of control.
+
+19
+00:00:54.390 --> 00:00:57.750
+To create scale and manage
+large numbers of containers,
+
+20
+00:00:57.750 --> 00:01:00.030
+container orchestration
+is needed.
+
+21
+00:01:00.030 --> 00:01:02.870
+Container orchestration is
+a process that automates
+
+22
+00:01:02.870 --> 00:01:04.770
+the container life
+cycle of a container
+
+23
+00:01:04.770 --> 00:01:07.270
+based or containerized
+application.
+
+24
+00:01:07.270 --> 00:01:09.650
+This includes
+deployment, management,
+
+25
+00:01:09.650 --> 00:01:12.835
+scaling, networking,
+and availability.
+
+26
+00:01:12.835 --> 00:01:15.540
+Container orchestration
+is necessary
+
+27
+00:01:15.540 --> 00:01:17.560
+in large dynamic environments,
+
+28
+00:01:17.560 --> 00:01:19.560
+since it streamlines complexity,
+
+29
+00:01:19.560 --> 00:01:22.000
+enables hands-off
+deployment and scaling,
+
+30
+00:01:22.000 --> 00:01:25.120
+increases speed,
+agility, and efficiency.
+
+31
+00:01:25.120 --> 00:01:28.380
+Seamlessly integrates
+into CI/CD workflows,
+
+32
+00:01:28.380 --> 00:01:30.340
+and DevOp practices,
+
+33
+00:01:30.340 --> 00:01:32.640
+and allows development teams
+
+34
+00:01:32.640 --> 00:01:34.780
+to use resources
+more efficiently.
+
+35
+00:01:34.780 --> 00:01:36.620
+Container orchestration can be
+
+36
+00:01:36.620 --> 00:01:39.300
+implemented on premises
+and on public,
+
+37
+00:01:39.300 --> 00:01:41.960
+private, or multi
+cloud environments.
+
+38
+00:01:41.960 --> 00:01:43.760
+It is often a critical part of
+
+39
+00:01:43.760 --> 00:01:46.240
+an organization
+security, orchestration,
+
+40
+00:01:46.240 --> 00:01:49.100
+automation, and
+response requirements,
+
+41
+00:01:49.100 --> 00:01:52.030
+also known as SOAR requirements.
+
+42
+00:01:52.030 --> 00:01:54.030
+Container orchestration
+tools have
+
+43
+00:01:54.030 --> 00:01:55.770
+a wide variety of features.
+
+44
+00:01:55.770 --> 00:01:58.110
+These features include defining
+
+45
+00:01:58.110 --> 00:02:00.630
+which container images
+make up the application,
+
+46
+00:02:00.630 --> 00:02:03.650
+and where they are
+located, in what registry,
+
+47
+00:02:03.650 --> 00:02:05.790
+improving provisioning
+and deployment
+
+48
+00:02:05.790 --> 00:02:08.130
+of containers for
+a more automated,
+
+49
+00:02:08.130 --> 00:02:10.670
+unified, and smooth process,
+
+50
+00:02:10.670 --> 00:02:13.870
+securing network connections
+between containers,
+
+51
+00:02:13.870 --> 00:02:16.390
+ensuring availability
+and performance
+
+52
+00:02:16.390 --> 00:02:18.150
+by relocating the containers
+
+53
+00:02:18.150 --> 00:02:20.200
+to another host if an outage or
+
+54
+00:02:20.200 --> 00:02:22.720
+shortage of system
+resources occurs.
+
+55
+00:02:22.720 --> 00:02:24.550
+Scaling containers to meet
+
+56
+00:02:24.550 --> 00:02:26.990
+demand and load
+balance requests,
+
+57
+00:02:26.990 --> 00:02:29.110
+handling resource allocation and
+
+58
+00:02:29.110 --> 00:02:30.390
+scheduling of containers
+
+59
+00:02:30.390 --> 00:02:32.270
+to the underlying
+infrastructure,
+
+60
+00:02:32.270 --> 00:02:34.990
+performing rolling
+updates and rollbacks,
+
+61
+00:02:34.990 --> 00:02:37.630
+and conducting health checks
+to ensure applications are
+
+62
+00:02:37.630 --> 00:02:38.810
+running or performing
+
+63
+00:02:38.810 --> 00:02:41.180
+the necessary actions
+when checks fail.
+
+64
+00:02:41.180 --> 00:02:44.170
+Container orchestration
+uses configuration files
+
+65
+00:02:44.170 --> 00:02:47.090
+written in YAML or JSON.
+
+66
+00:02:47.090 --> 00:02:49.050
+These files configure
+each container
+
+67
+00:02:49.050 --> 00:02:50.650
+so it can find resources,
+
+68
+00:02:50.650 --> 00:02:53.450
+establish a network,
+and store logs.
+
+69
+00:02:53.450 --> 00:02:56.130
+Container orchestration
+also automatically
+
+70
+00:02:56.130 --> 00:02:58.970
+schedules the deployment of a
+new container to a cluster,
+
+71
+00:02:58.970 --> 00:03:01.070
+and finds the right
+host based on
+
+72
+00:03:01.070 --> 00:03:03.610
+predefined settings
+or restrictions.
+
+73
+00:03:03.610 --> 00:03:06.750
+Additionally, container
+orchestration manages
+
+74
+00:03:06.750 --> 00:03:08.730
+the container's
+life cycle based on
+
+75
+00:03:08.730 --> 00:03:11.130
+specifications in the
+configuration file.
+
+76
+00:03:11.130 --> 00:03:13.090
+This includes system parameters,
+
+77
+00:03:13.090 --> 00:03:16.270
+like CPU and memory,
+and file parameters,
+
+78
+00:03:16.270 --> 00:03:18.970
+like proximity and
+file metadata,
+
+79
+00:03:18.970 --> 00:03:21.500
+and container
+orchestration supports
+
+80
+00:03:21.500 --> 00:03:24.735
+scaling and enhances
+productivity through automation.
+
+81
+00:03:24.735 --> 00:03:28.250
+Here are some well known
+container orchestration tools.
+
+82
+00:03:28.250 --> 00:03:31.290
+Marathon is a framework
+for Apache Mesos,
+
+83
+00:03:31.290 --> 00:03:33.490
+an open source cluster
+manager that was
+
+84
+00:03:33.490 --> 00:03:36.450
+developed by the University
+of California at Berkeley.
+
+85
+00:03:36.450 --> 00:03:39.490
+It allows you to scale
+container infrastructure by
+
+86
+00:03:39.490 --> 00:03:42.700
+automating the bulk of
+management and monitoring tasks.
+
+87
+00:03:42.700 --> 00:03:44.630
+HachiCorps Nomad is
+
+88
+00:03:44.630 --> 00:03:45.850
+a free and open source
+
+89
+00:03:45.850 --> 00:03:47.790
+cluster management
+and scheduling tool
+
+90
+00:03:47.790 --> 00:03:50.390
+that supports docker
+and other stand alone,
+
+91
+00:03:50.390 --> 00:03:53.450
+virtualized or
+containerized applications
+
+92
+00:03:53.450 --> 00:03:56.890
+on all major operating systems
+across all infrastructure,
+
+93
+00:03:56.890 --> 00:03:59.390
+whether on premises
+or in the Cloud.
+
+94
+00:03:59.390 --> 00:04:01.530
+This flexibility lets teams work
+
+95
+00:04:01.530 --> 00:04:03.830
+with any type and
+level of workload.
+
+96
+00:04:03.830 --> 00:04:05.670
+Docker Swarm automates
+
+97
+00:04:05.670 --> 00:04:07.890
+the deployment of
+containerized applications,
+
+98
+00:04:07.890 --> 00:04:09.970
+but was designed
+specifically to work with
+
+99
+00:04:09.970 --> 00:04:12.490
+docker engine and
+other docker tools,
+
+100
+00:04:12.490 --> 00:04:14.110
+making it a popular choice for
+
+101
+00:04:14.110 --> 00:04:16.980
+teams already working
+in docker environments.
+
+102
+00:04:16.980 --> 00:04:19.040
+Developed by Google
+and maintained
+
+103
+00:04:19.040 --> 00:04:21.175
+by the Cloud Native
+Computing Foundation,
+
+104
+00:04:21.175 --> 00:04:24.000
+CNCF, the open source platform
+
+105
+00:04:24.000 --> 00:04:25.080
+Kubernetes is
+
+106
+00:04:25.080 --> 00:04:27.940
+the defactor standard for
+container orchestration.
+
+107
+00:04:27.940 --> 00:04:30.060
+Kubernetes automates a host
+
+108
+00:04:30.060 --> 00:04:31.780
+of container management tasks,
+
+109
+00:04:31.780 --> 00:04:33.140
+including deployment,
+
+110
+00:04:33.140 --> 00:04:35.480
+storage provisioning,
+load balancing,
+
+111
+00:04:35.480 --> 00:04:38.930
+and scaling, service
+discovery, and self-healing,
+
+112
+00:04:38.930 --> 00:04:40.400
+the ability to restart,
+
+113
+00:04:40.400 --> 00:04:43.220
+replace, or remove
+a failed container.
+
+114
+00:04:43.220 --> 00:04:45.000
+With broad functionality and
+
+115
+00:04:45.000 --> 00:04:48.160
+an expanding ecosystem of
+open source supporting tools,
+
+116
+00:04:48.160 --> 00:04:50.200
+Kubernetes is widely supported
+
+117
+00:04:50.200 --> 00:04:51.860
+by leading Cloud providers,
+
+118
+00:04:51.860 --> 00:04:55.590
+many of whom now offer fully
+managed Kubernetes services.
+
+119
+00:04:55.590 --> 00:04:57.820
+Container orchestration
+helps to meet
+
+120
+00:04:57.820 --> 00:04:59.180
+business goals and increase
+
+121
+00:04:59.180 --> 00:05:01.100
+profitability by
+using automation.
+
+122
+00:05:01.100 --> 00:05:02.380
+The benefits of container
+
+123
+00:05:02.380 --> 00:05:03.860
+orchestration for developers and
+
+124
+00:05:03.860 --> 00:05:06.920
+administrators include
+increased productivity,
+
+125
+00:05:06.920 --> 00:05:08.800
+removing the burden
+of individually
+
+126
+00:05:08.800 --> 00:05:10.900
+installing and managing
+each container,
+
+127
+00:05:10.900 --> 00:05:13.540
+which in turn reduces
+errors and frees
+
+128
+00:05:13.540 --> 00:05:16.470
+development teams to focus
+on application improvement.
+
+129
+00:05:16.470 --> 00:05:18.120
+Faster deployments,
+
+130
+00:05:18.120 --> 00:05:20.240
+iteratively releasing
+new features and
+
+131
+00:05:20.240 --> 00:05:22.340
+capabilities faster
+and deploying
+
+132
+00:05:22.340 --> 00:05:25.340
+containers and containerized
+applications rapidly.
+
+133
+00:05:25.340 --> 00:05:28.220
+Reduced costs, being
+cost effective,
+
+134
+00:05:28.220 --> 00:05:30.960
+service containers have
+lower overhead and use
+
+135
+00:05:30.960 --> 00:05:32.960
+fewer resources than
+virtual machines
+
+136
+00:05:32.960 --> 00:05:34.665
+or traditional servers.
+
+137
+00:05:34.665 --> 00:05:36.410
+Stronger security,
+
+138
+00:05:36.410 --> 00:05:39.850
+sharing resources and isolating
+application processes,
+
+139
+00:05:39.850 --> 00:05:42.610
+improving the container's
+overall security,
+
+140
+00:05:42.610 --> 00:05:44.530
+easier scalability,
+
+141
+00:05:44.530 --> 00:05:46.230
+scaling applications using
+
+142
+00:05:46.230 --> 00:05:49.290
+a single command and
+faster error recovery,
+
+143
+00:05:49.290 --> 00:05:52.190
+maintaining high availability
+by detecting and
+
+144
+00:05:52.190 --> 00:05:53.950
+resolving issues
+like infrastructure
+
+145
+00:05:53.950 --> 00:05:55.525
+failures automatically.
+
+146
+00:05:55.525 --> 00:05:58.060
+In this video, you learn that
+
+147
+00:05:58.060 --> 00:06:01.360
+managing large numbers of
+containers is difficult.
+
+148
+00:06:01.360 --> 00:06:02.820
+Container orchestration
+
+149
+00:06:02.820 --> 00:06:04.770
+automates the
+container life cycle,
+
+150
+00:06:04.770 --> 00:06:06.620
+resulting in faster deployments,
+
+151
+00:06:06.620 --> 00:06:09.220
+reduced errors,
+higher availability,
+
+152
+00:06:09.220 --> 00:06:10.920
+and stronger security.
+
+153
+00:06:10.920 --> 00:06:14.160
+Popular container orchestration
+tools include Marathon,
+
+154
+00:06:14.160 --> 00:06:17.535
+Nomad, Docker Swarm,
+and Kubernetes.
+
+155
+00:06:17.535 --> 00:06:21.040
+Finally, container orchestration
+improves productivity,
+
+156
+00:06:21.040 --> 00:06:22.620
+deployment, costs,
+
+157
+00:06:22.620 --> 00:06:26.560
+security, scalability,
+and error recovery.
