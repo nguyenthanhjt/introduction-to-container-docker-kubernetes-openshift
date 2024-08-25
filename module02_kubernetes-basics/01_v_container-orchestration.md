@@ -1,5 +1,16 @@
 # Module 2 - Section 1: Video - Container Orchestration
 
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Challenges of Container Management](#challenges-of-container-management)
+- [Need for Container Orchestration](#need-for-container-orchestration)
+- [Container Orchestration Features](#container-orchestration-features)
+- [How does Container orchestration work?](#how-does-container-orchestration-work)
+- [Popular Container Orchestration Tools](#popular-container-orchestration-tools)
+- [Container Orchestration benefits](#container-orchestration-benefits)
+- [Summary](#summary)
+
 ## Introduction
 
 Welcome to container orchestration.
