@@ -72,7 +72,7 @@ Some third-party provider to host registry: AWS ECR, IBM Cloud Container Registr
 
 ## Summary
 
-In this video, we learned that Docker architecture consists of a Docker client, a Docker host, and a registry. The client interacts with the host using commands and REST APIs. The Docker host includes the daemon (`dockerd`) and manages images, containers, networks, storage, plugins, and add-ons. Containerization is the process used to build, push, and run an image to create a running container.
+In this section, we learned that Docker architecture consists of a Docker client, a Docker host, and a registry. The client interacts with the host using commands and REST APIs. The Docker host includes the daemon (`dockerd`) and manages images, containers, networks, storage, plugins, and add-ons. Containerization is the process used to build, push, and run an image to create a running container.
 
 - Docker architecture consists of a Docker client, a Docker host, and a registry
 - The client interacts with the host using commands and REST APIs

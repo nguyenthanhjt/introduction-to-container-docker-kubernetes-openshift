@@ -108,7 +108,7 @@ The key components of a worker node include:
 
 ## Summary
 
-In this video, you learned that the control plane makes global decisions about the Kubernetes cluster and is made up of controllers, an API server, a scheduler, and etcd. Worker nodes run important Kubernetes components as well as user workloads deployed on the cluster. The smallest deployable entity in Kubernetes is a pod, which includes one or more containers.
+In this section, you learned that the control plane makes global decisions about the Kubernetes cluster and is made up of controllers, an API server, a scheduler, and etcd. Worker nodes run important Kubernetes components as well as user workloads deployed on the cluster. The smallest deployable entity in Kubernetes is a pod, which includes one or more containers.
 
 - A control plane makes global decisions about the Kubernetes cluster
 - A control plane is made up of controllers, an API server, a scheduler, and an etcd

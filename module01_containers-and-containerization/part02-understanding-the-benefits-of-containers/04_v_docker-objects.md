@@ -79,7 +79,7 @@ Plugins extend Docker's functionality and integrate with other systems.
 
 ## Summary
 
-In this video, we learned about various Docker objects, including essential Docker instructions (FROM, RUN, CMD), Docker containers, image name format, networks, volumes, and plugins. These objects are fundamental to understanding and using Docker effectively.
+In this section, we learned about various Docker objects, including essential Docker instructions (FROM, RUN, CMD), Docker containers, image name format, networks, volumes, and plugins. These objects are fundamental to understanding and using Docker effectively.
 
 - Docker contains objects such as Dockerfiles, images, containers, networks, storage volumes, plugins, and add-ons
 - Essential Docker instructions include FROM, RUN, and CMD
