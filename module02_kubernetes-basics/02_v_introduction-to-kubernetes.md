@@ -1,5 +1,15 @@
 # Module 2 - Section 2: Video - Introduction to Kubernetes
 
+## Table of Contents
+
+- [Introduction](#introduction)
+- [What is Kubernetes?](#what-is-kubernetes)
+- [What Kubernetes is Not](#what-kubernetes-is-not)
+- [Kubernetes Concepts](#kubernetes-concepts)
+- [Kubernetes Capabilities](#kubernetes-capabilities)
+- [Kubernetes Ecosystem](#kubernetes-ecosystem)
+- [Summary](#summary)
+
 ## Introduction
 
 ![x](resources/02/01_agenda.png)
