@@ -1,0 +1,422 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:06.978
+[MUSIC]
+
+2
+00:00:06.978 --> 00:00:09.469
+Welcome to Kubernetes architecture.
+
+3
+00:00:09.469 --> 00:00:12.389
+After watching this video,
+you will be able to,
+
+4
+00:00:12.389 --> 00:00:15.823
+identify the components of
+a Kubernetes architecture.
+
+5
+00:00:15.823 --> 00:00:18.748
+Identify the components
+of a control plane.
+
+6
+00:00:18.748 --> 00:00:21.869
+And identify the components
+of a worker plane.
+
+7
+00:00:21.869 --> 00:00:26.304
+This architecture diagram highlights the
+main components in a Kubernetes system.
+
+8
+00:00:26.304 --> 00:00:30.207
+A deployment of Kubernetes is
+called a Kubernetes cluster.
+
+9
+00:00:30.207 --> 00:00:35.709
+A Kubernetes cluster is a cluster of nodes
+that runs containerized applications.
+
+10
+00:00:35.709 --> 00:00:40.567
+Each cluster has one master node,
+the Kubernetes control plane, and
+
+11
+00:00:40.567 --> 00:00:42.390
+one or more worker nodes.
+
+12
+00:00:42.390 --> 00:00:46.920
+The control plane maintains the intended
+cluster state by making decisions
+
+13
+00:00:46.920 --> 00:00:51.318
+about the cluster and detecting and
+responding to events in the cluster.
+
+14
+00:00:51.318 --> 00:00:54.723
+As an analogy,
+it is similar to a thermostat.
+
+15
+00:00:54.723 --> 00:00:59.347
+You specify the desired temperature, and
+the thermostat regulates heating and
+
+16
+00:00:59.347 --> 00:01:03.019
+cooling systems continuously to
+achieve the specified state.
+
+17
+00:01:03.019 --> 00:01:08.312
+An example of decision made by the control
+plane is the scheduling of workloads and
+
+18
+00:01:08.312 --> 00:01:12.608
+an example of responding to an event
+is creating new resources when
+
+19
+00:01:12.608 --> 00:01:14.545
+an application is deployed.
+
+20
+00:01:14.545 --> 00:01:18.093
+Nodes are the worker machines
+in a Kubernetes cluster.
+
+21
+00:01:18.093 --> 00:01:22.052
+In other words,
+user applications are run on nodes.
+
+22
+00:01:22.052 --> 00:01:27.182
+Nodes are not created by Kubernetes
+itself, but rather by the cloud provider.
+
+23
+00:01:27.182 --> 00:01:30.768
+This allows Kubernetes to run
+on a variety of infrastructures.
+
+24
+00:01:30.768 --> 00:01:34.010
+The nodes are then managed
+by the control plane.
+
+25
+00:01:34.010 --> 00:01:36.392
+In the Kubernetes control plane,
+
+26
+00:01:36.392 --> 00:01:40.263
+the Kubernetes API server
+exposes the Kubernetes API.
+
+27
+00:01:40.263 --> 00:01:44.090
+The API server serves as the front-end for
+the control plane.
+
+28
+00:01:44.090 --> 00:01:48.205
+All communication in
+the cluster utilizes this API.
+
+29
+00:01:48.205 --> 00:01:52.480
+For example, the Kubernetes API
+server accepts commands to view or
+
+30
+00:01:52.480 --> 00:01:54.582
+change the state of the cluster.
+
+31
+00:01:54.582 --> 00:01:59.417
+The main implementation of a Kubernetes
+API server is Kube-api-server,
+
+32
+00:01:59.417 --> 00:02:03.962
+which is designed to scale horizontally
+by deploying more instances.
+
+33
+00:02:03.962 --> 00:02:07.222
+You can run several instances
+of kube-api-server and
+
+34
+00:02:07.222 --> 00:02:09.795
+balance traffic between those instances.
+
+35
+00:02:09.795 --> 00:02:14.577
+Etcd is a highly available distributed
+key value store that contains
+
+36
+00:02:14.577 --> 00:02:16.148
+all the cluster data.
+
+37
+00:02:16.148 --> 00:02:19.511
+When you tell Kubernetes
+to deploy your application,
+
+38
+00:02:19.511 --> 00:02:22.666
+that deployment configuration
+is stored in etcd.
+
+39
+00:02:22.666 --> 00:02:25.663
+Etcd defines the state in
+a Kubernetes cluster and
+
+40
+00:02:25.663 --> 00:02:29.884
+the system works to bring the actual
+state to match the desired state.
+
+41
+00:02:29.884 --> 00:02:33.866
+The Kubernetes scheduler assigns
+newly created pods to nodes.
+
+42
+00:02:33.866 --> 00:02:38.115
+This basically means that the kube
+scheduler determines where your workloads
+
+43
+00:02:38.115 --> 00:02:39.862
+should run within the cluster.
+
+44
+00:02:39.862 --> 00:02:43.610
+The scheduler selects the most
+optimal node according to Kubernetes
+
+45
+00:02:43.610 --> 00:02:47.950
+scheduling principles, configuration
+options, and available resources.
+
+46
+00:02:47.950 --> 00:02:52.629
+The Kubernetes controller manager runs
+all the controller processes that monitor
+
+47
+00:02:52.629 --> 00:02:53.831
+the cluster state and
+
+48
+00:02:53.831 --> 00:02:57.457
+ensure the actual state of a cluster
+matches the desired state.
+
+49
+00:02:57.457 --> 00:03:01.877
+Finally, the cloud controller manager
+runs controllers that interact with
+
+50
+00:03:01.877 --> 00:03:03.857
+the underlying cloud providers.
+
+51
+00:03:03.857 --> 00:03:08.477
+These controllers effectively link
+clusters into a cloud provider's API.
+
+52
+00:03:08.477 --> 00:03:10.657
+Since Kubernetes is open source and
+
+53
+00:03:10.657 --> 00:03:15.379
+would ideally be adopted by a variety
+of cloud providers and organizations,
+
+54
+00:03:15.379 --> 00:03:18.808
+Kubernetes strive to be as
+cloud agnostic as possible.
+
+55
+00:03:18.808 --> 00:03:22.878
+The cloud controller manager allows
+both Kubernetes and the cloud
+
+56
+00:03:22.878 --> 00:03:27.614
+providers to evolve freely without
+introducing dependencies on the other.
+
+57
+00:03:27.614 --> 00:03:31.255
+Nodes are the worker machines
+in a Kubernetes cluster.
+
+58
+00:03:31.255 --> 00:03:35.020
+In other words,
+user applications are run on nodes.
+
+59
+00:03:35.020 --> 00:03:38.302
+Nodes can be virtual or physical machines.
+
+60
+00:03:38.302 --> 00:03:40.841
+Each node is managed by
+the control plane and
+
+61
+00:03:40.841 --> 00:03:44.008
+contain the services necessary
+to run applications.
+
+62
+00:03:44.008 --> 00:03:49.106
+Nodes include pods which are the smallest
+deployment entity in Kubernetes.
+
+63
+00:03:49.106 --> 00:03:51.965
+Pods include one or more containers.
+
+64
+00:03:51.965 --> 00:03:57.003
+Containers share all the resources of the
+node and can communicate among themselves.
+
+65
+00:03:57.003 --> 00:04:00.854
+The kubelet is the most important
+component of a worker node.
+
+66
+00:04:00.854 --> 00:04:05.012
+This controller communicates with
+the kube API server to receive new and
+
+67
+00:04:05.012 --> 00:04:08.284
+modified pod specifications and
+ensure that the pods and
+
+68
+00:04:08.284 --> 00:04:11.436
+their associated containers
+are running as desired.
+
+69
+00:04:11.436 --> 00:04:16.199
+The kubelet also reports to the control
+plane on the pods health and status, and
+
+70
+00:04:16.199 --> 00:04:20.336
+in order to start a pod,
+the kubelet uses the container's runtime.
+
+71
+00:04:20.336 --> 00:04:25.325
+The container runtime is responsible for
+downloading images and running containers.
+
+72
+00:04:25.325 --> 00:04:30.042
+Rather than providing a single container
+runtime, Kubernetes implements
+
+73
+00:04:30.042 --> 00:04:35.361
+a container runtime interface that permits
+pluggability of the container runtime.
+
+74
+00:04:35.361 --> 00:04:38.767
+While Docker is likely
+the best known runtime,
+
+75
+00:04:38.767 --> 00:04:43.462
+Podman and Creo are two other
+commonly used container runtimes.
+
+76
+00:04:43.462 --> 00:04:49.987
+Lastly, the Kubernetes proxy is a network
+proxy that runs on each node in a cluster.
+
+77
+00:04:49.987 --> 00:04:54.685
+This proxy maintains network rules that
+allow communication to pods running on
+
+78
+00:04:54.685 --> 00:04:59.394
+nodes, in other words, communication
+to workloads running on your cluster.
+
+79
+00:04:59.394 --> 00:05:04.125
+In this video, you learned that a control
+plane makes global decisions about
+
+80
+00:05:04.125 --> 00:05:05.741
+the Kubernetes cluster.
+
+81
+00:05:05.741 --> 00:05:12.808
+A control plane is made up of controllers,
+an API server, a scheduler, and an etcd.
+
+82
+00:05:12.808 --> 00:05:17.385
+A worker plane is made up of nodes,
+kubelet, container runtime, and
+
+83
+00:05:17.385 --> 00:05:18.401
+kube-proxy.
+
+84
+00:05:18.401 --> 00:05:23.001
+Worker nodes run important Kubernetes
+components as well as user
+
+85
+00:05:23.001 --> 00:05:25.601
+workloads deployed on the cluster.
+
+86
+00:05:25.601 --> 00:05:30.916
+And the smallest deployable entity in
+Kubernetes is a pod which includes one or
+
+87
+00:05:30.916 --> 00:05:32.214
+more containers.
+
+88
+00:05:32.214 --> 00:05:32.714
+[MUSIC]
