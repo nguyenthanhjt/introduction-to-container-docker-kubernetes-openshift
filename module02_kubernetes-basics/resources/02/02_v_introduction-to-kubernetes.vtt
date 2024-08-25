@@ -1,0 +1,490 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:07.088
+[MUSIC]
+
+2
+00:00:07.088 --> 00:00:09.832
+Welcome to introduction to Kubernetes.
+
+3
+00:00:09.832 --> 00:00:14.127
+After watching this video you
+will be able define Kubernetes,
+
+4
+00:00:14.127 --> 00:00:18.505
+explain what Kubernetes is not,
+relate Kubernetes concepts,
+
+5
+00:00:18.505 --> 00:00:23.902
+describe Kubernetes capabilities and
+describe the Kubernetes ecosystem.
+
+6
+00:00:23.902 --> 00:00:27.542
+The official Kubernetes documentation
+describes Kubernetes as
+
+7
+00:00:27.542 --> 00:00:30.651
+an open-source system for
+automating, deployment,
+
+8
+00:00:30.651 --> 00:00:34.064
+scaling and
+management of containerized applications.
+
+9
+00:00:34.064 --> 00:00:35.994
+Kubernetes is widely available and
+
+10
+00:00:35.994 --> 00:00:40.312
+has positioned itself as the de facto
+choice for container orchestration.
+
+11
+00:00:40.312 --> 00:00:42.932
+Kubernetes is an open-source
+containerization
+
+12
+00:00:42.932 --> 00:00:46.113
+orchestration platform developed
+as a project by Google and
+
+13
+00:00:46.113 --> 00:00:49.904
+is currently maintained by
+the Cloud Native Computing Foundation.
+
+14
+00:00:49.904 --> 00:00:53.304
+It is easily portable across clouds and
+on premises.
+
+15
+00:00:53.304 --> 00:00:58.087
+With its growing ecosystem of projects and
+products by both member and non-member
+
+16
+00:00:58.087 --> 00:01:03.242
+partners, Kubernetes is recognized as the
+go to container orchestration solution.
+
+17
+00:01:03.242 --> 00:01:07.385
+Kubernetes as a service grew as
+an extension of containers as a service.
+
+18
+00:01:07.385 --> 00:01:11.520
+Kubernetes facilitates declarative
+management in which it automatically
+
+19
+00:01:11.520 --> 00:01:15.882
+performs the necessary operations
+towards achieving the called for state.
+
+20
+00:01:15.882 --> 00:01:17.961
+Here's what Kubernetes is not,
+
+21
+00:01:17.961 --> 00:01:21.755
+it is not a traditional all
+inclusive platform as a service.
+
+22
+00:01:21.755 --> 00:01:23.960
+It is not rigid or opinionated, but
+
+23
+00:01:23.960 --> 00:01:29.109
+more of a flexible model that supports
+an extremely diverse variety of workloads,
+
+24
+00:01:29.109 --> 00:01:33.378
+including stateless, stateful and
+data processing workloads.
+
+25
+00:01:33.378 --> 00:01:37.005
+It can work with all applications
+that can be containerized,
+
+26
+00:01:37.005 --> 00:01:41.611
+it does not provide continuous integration
+continuous delivery pipelines to
+
+27
+00:01:41.611 --> 00:01:44.193
+build applications or deploy source code,
+
+28
+00:01:44.193 --> 00:01:48.684
+it does not prescribe logging,
+monitoring and alerting solutions.
+
+29
+00:01:48.684 --> 00:01:53.246
+Organizations are free to select and
+integrate third party and open-source
+
+30
+00:01:53.246 --> 00:01:58.484
+tools, and it does not provide built in
+middleware databases or other services.
+
+31
+00:01:58.484 --> 00:02:01.324
+Let's check out some Kubernetes concepts.
+
+32
+00:02:01.324 --> 00:02:05.863
+Concepts of Kubernetes include
+the following, pods represent the smallest
+
+33
+00:02:05.863 --> 00:02:10.611
+deployable compute object and the higher
+level abstractions to run workloads,
+
+34
+00:02:10.611 --> 00:02:13.919
+services expose applications
+running on sets of pods.
+
+35
+00:02:13.919 --> 00:02:19.531
+Each pod is assigned a unique IP address
+and sets of pods have a single DNS name.
+
+36
+00:02:19.531 --> 00:02:23.787
+Kubernetes supports both persistent and
+temporary storage for pods.
+
+37
+00:02:23.787 --> 00:02:27.721
+Configuration, which refers to
+the provisioning of resources for
+
+38
+00:02:27.721 --> 00:02:28.899
+configuring pods.
+
+39
+00:02:28.899 --> 00:02:33.454
+Security measures for cloud-native
+workloads, which enforce security for
+
+40
+00:02:33.454 --> 00:02:34.635
+pod and API access.
+
+41
+00:02:34.635 --> 00:02:39.079
+Policies for groups of resources,
+ensuring that pods match to nodes so
+
+42
+00:02:39.079 --> 00:02:42.534
+that the kubelet can find them and
+run the pods.
+
+43
+00:02:42.534 --> 00:02:46.594
+Scheduling and eviction that runs and
+proactively terminates one or
+
+44
+00:02:46.594 --> 00:02:49.006
+more pods on resource starved Nodes.
+
+45
+00:02:49.006 --> 00:02:52.182
+Preemption, which is all
+about prioritization.
+
+46
+00:02:52.182 --> 00:02:55.101
+Preemption terminates
+lower priority Pods so
+
+47
+00:02:55.101 --> 00:02:59.166
+that pods with higher priority
+can schedule and run on Nodes.
+
+48
+00:02:59.166 --> 00:03:03.957
+And finally, cluster administration
+provides the details necessary to
+
+49
+00:03:03.957 --> 00:03:06.126
+create or administer a cluster.
+
+50
+00:03:06.126 --> 00:03:11.094
+Kubernetes capabilities include, automated
+rollouts of changes to application or
+
+51
+00:03:11.094 --> 00:03:12.132
+configuration.
+
+52
+00:03:12.132 --> 00:03:17.414
+Health monitoring and rolling back
+changes, storage orchestration that mounts
+
+53
+00:03:17.414 --> 00:03:22.925
+a chosen storage system including local
+storage, network storage or public cloud,
+
+54
+00:03:22.925 --> 00:03:27.914
+and horizontal scaling of workloads
+based on metrics or via commands.
+
+55
+00:03:27.914 --> 00:03:30.733
+Additional capabilities
+include the following,
+
+56
+00:03:30.733 --> 00:03:33.748
+automated bin packing that
+increases utilization and
+
+57
+00:03:33.748 --> 00:03:37.510
+cost saving using a mix of critical and
+best-effort workloads.
+
+58
+00:03:37.510 --> 00:03:40.985
+Automated bin packing performs
+container auto placement based on
+
+59
+00:03:40.985 --> 00:03:45.774
+resource requirements and conditions
+without sacrificing high availability.
+
+60
+00:03:45.774 --> 00:03:47.880
+Kubernetes includes secret and
+
+61
+00:03:47.880 --> 00:03:52.951
+configuration management of sensitive
+information including passwords,
+
+62
+00:03:52.951 --> 00:03:56.773
+OAuth tokens, and SSH keys,
+and handles deployments and
+
+63
+00:03:56.773 --> 00:04:01.298
+updates to secrets and configuration
+without rebuilding images and
+
+64
+00:04:01.298 --> 00:04:06.494
+Kubernetes assigns both IPv4 and
+IPv6 addresses to Pods and services.
+
+65
+00:04:06.494 --> 00:04:11.614
+Kubernetes manages batch and continuous
+integration workloads and automatically
+
+66
+00:04:11.614 --> 00:04:16.674
+replaces failed containers, it self heals
+failing or unresponsive containers.
+
+67
+00:04:16.674 --> 00:04:21.653
+It discovers pods using IP addresses or
+a DNS name and load balances traffic for
+
+68
+00:04:21.653 --> 00:04:24.747
+better performance and
+high availability, and
+
+69
+00:04:24.747 --> 00:04:29.688
+Kubernetes adds features to your
+cluster without modifying source code.
+
+70
+00:04:29.688 --> 00:04:34.316
+The Kubernetes ecosystem is a large,
+rapidly growing ecosystem where its
+
+71
+00:04:34.316 --> 00:04:38.074
+services, support, and
+tools that are widely available.
+
+72
+00:04:38.074 --> 00:04:41.272
+Running containerized applications
+require separate tools.
+
+73
+00:04:41.272 --> 00:04:45.913
+In addition to the Kubernetes
+orchestration tool, the ecosystem includes
+
+74
+00:04:45.913 --> 00:04:51.134
+services like building container images,
+storing images in a container registry,
+
+75
+00:04:51.134 --> 00:04:55.594
+application logging and monitoring,
+and CI/CD capabilities.
+
+76
+00:04:55.594 --> 00:05:00.215
+The Kubernetes ecosystem is a huge
+collection of products, services, and
+
+77
+00:05:00.215 --> 00:05:01.186
+providers.
+
+78
+00:05:01.186 --> 00:05:07.242
+Leading public cloud providers
+include Prisma, IBM, Google, and AWS.
+
+79
+00:05:07.242 --> 00:05:12.229
+Open source framework providers
+include Red Hat, VMware, SUS,
+
+80
+00:05:12.229 --> 00:05:15.834
+Mesosphere, Docker, and Cloud Foundry.
+
+81
+00:05:15.834 --> 00:05:21.196
+Management providers include
+Digital Ocean, loodse, SUPERGIANT,
+
+82
+00:05:21.196 --> 00:05:25.834
+CloudSoft, turbonomic,
+Techtonic, and Weaverworks.
+
+83
+00:05:25.834 --> 00:05:33.714
+Tool providers include JFrog, Univa,
+Aspen Mesh, Bitnami, and Cloud 66.
+
+84
+00:05:33.714 --> 00:05:39.146
+Monitoring and logging providers
+include sumologic, DATADOG,
+
+85
+00:05:39.146 --> 00:05:45.144
+New Relic, iguazio, Grafana SignalFX,
+sysdig, and Dynatrace.
+
+86
+00:05:45.144 --> 00:05:49.804
+Security providers include GUARDCORE,
+BLACKDUCK,
+
+87
+00:05:49.804 --> 00:05:54.361
+yubico, cilium, aqua,
+TwistLock, and Alcide and
+
+88
+00:05:54.361 --> 00:06:00.600
+load balancing providers include
+AVI networks, VMware, and NGiNX.
+
+89
+00:06:00.600 --> 00:06:04.352
+In this video you learned that
+Kubernetes is a highly portable,
+
+90
+00:06:04.352 --> 00:06:08.801
+horizontally scalable open-source
+container orchestration system with
+
+91
+00:06:08.801 --> 00:06:12.880
+automated deployment and
+simplified management capabilities.
+
+92
+00:06:12.880 --> 00:06:18.364
+Its concepts include Pods and
+workloads services, storage configuration,
+
+93
+00:06:18.364 --> 00:06:24.854
+security policies, scheduling and
+eviction, preemption, and administration.
+
+94
+00:06:24.854 --> 00:06:29.534
+You also learned that Kubernetes
+capabilities include automated rollouts
+
+95
+00:06:29.534 --> 00:06:33.556
+and rollbacks, storage orchestration,
+horizontal scaling,
+
+96
+00:06:33.556 --> 00:06:37.894
+automated bin packing, secret and
+configuration management.
+
+97
+00:06:37.894 --> 00:06:43.157
+IPv4/IPv6 dual stack support,
+batch execution, self-healing,
+
+98
+00:06:43.157 --> 00:06:49.211
+service discovery and load balancing and
+finally, designed for extensibility.
+
+99
+00:06:49.211 --> 00:06:54.493
+And the Kubernetes ecosystem includes
+public cloud providers, frameworks,
+
+100
+00:06:54.493 --> 00:06:59.950
+management, tools, monitoring and
+logging, security, and load balancing.
+
+101
+00:06:59.950 --> 00:07:00.450
+[MUSIC]
