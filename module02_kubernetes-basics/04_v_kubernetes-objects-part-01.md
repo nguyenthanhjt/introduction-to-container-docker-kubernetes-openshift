@@ -1,4 +1,4 @@
-# Module 2 - Section# Module 2 - Section 4: Video - Kubernetes Objects Part 1
+# Module 2 - Section 4: Video - Kubernetes Objects Part 1
 
 ## Table of Contents
 
