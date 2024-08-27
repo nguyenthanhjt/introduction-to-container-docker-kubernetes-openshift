@@ -1,0 +1,474 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:06.798
+[MUSIC]
+
+2
+00:00:06.798 --> 00:00:10.327
+Welcome to Kubernetes Objects, Part 2.
+
+3
+00:00:10.327 --> 00:00:15.819
+After watching this video, you will
+be able to, describe the purposes,
+
+4
+00:00:15.819 --> 00:00:20.868
+properties, and uses of a service,
+describe the roles and uses for
+
+5
+00:00:20.868 --> 00:00:26.717
+the ClusterIP, NodePort, LoadBalancer,
+and External Name Services, and
+
+6
+00:00:26.717 --> 00:00:32.766
+describe the roles and uses for Ingress,
+Daemonset, StatefulSet, and a Job.
+
+7
+00:00:32.766 --> 00:00:36.111
+A service is a REST object, like Pods.
+
+8
+00:00:36.111 --> 00:00:40.094
+Services are a logical abstraction for
+a set of Pods in a cluster.
+
+9
+00:00:40.094 --> 00:00:44.034
+They provide policies for
+accessing the Pods in cluster and
+
+10
+00:00:44.034 --> 00:00:46.650
+act as a load balancer across the Pods.
+
+11
+00:00:46.650 --> 00:00:49.694
+Each service is assigned
+a unique IP address for
+
+12
+00:00:49.694 --> 00:00:52.738
+accessing applications deployed on Pods,
+and
+
+13
+00:00:52.738 --> 00:00:57.472
+a service eliminates the need for
+a separate service discovery process.
+
+14
+00:00:57.472 --> 00:01:03.302
+A service supports multiple protocols such
+as TCP, which is the default protocol,
+
+15
+00:01:03.302 --> 00:01:07.587
+UDP, and others, and
+supports multiple port definitions.
+
+16
+00:01:07.587 --> 00:01:11.447
+The port number with the same name
+can vary in each backend Pod.
+
+17
+00:01:11.447 --> 00:01:15.420
+In addition, a service can
+have an optional selector and
+
+18
+00:01:15.420 --> 00:01:19.076
+can optionally map incoming
+ports to a target port.
+
+19
+00:01:19.076 --> 00:01:22.952
+Next, let's learn why a service is needed.
+
+20
+00:01:22.952 --> 00:01:27.029
+A service is needed because Pods
+in a cluster can be destroyed and
+
+21
+00:01:27.029 --> 00:01:29.307
+new Pods can be created at any time.
+
+22
+00:01:29.307 --> 00:01:34.642
+This volatility leads to discoverability
+issues because of changing IP addresses.
+
+23
+00:01:34.642 --> 00:01:39.456
+A service keeps track of Pod changes and
+exposes a single IP address or
+
+24
+00:01:39.456 --> 00:01:43.612
+a DNS name, and utilizes
+selectors to target a set of Pods.
+
+25
+00:01:43.612 --> 00:01:46.021
+For native Kubernetes applications,
+
+26
+00:01:46.021 --> 00:01:51.211
+API endpoints are updated whenever changes
+are detected to the Pods in the service.
+
+27
+00:01:51.211 --> 00:01:56.447
+For non-native applications, Kubernetes
+uses a virtua- IP-based bridge or
+
+28
+00:01:56.447 --> 00:02:00.687
+load balancer in between
+the applications and the backend Pods.
+
+29
+00:02:00.687 --> 00:02:08.165
+There are 4 types of Cluster IP, NodePort,
+LoadBalancer, and External Name.
+
+30
+00:02:08.165 --> 00:02:11.032
+Let's learn about each service type.
+
+31
+00:02:11.032 --> 00:02:14.752
+Cluster IP is the default and
+most common service type.
+
+32
+00:02:14.752 --> 00:02:19.171
+Kubernetes assigns a cluster internal
+IP address to the cluster IP service
+
+33
+00:02:19.171 --> 00:02:22.692
+that makes the service only
+reachable within the cluster.
+
+34
+00:02:22.692 --> 00:02:27.333
+A cluster IP service cannot make requests
+to service from outside the cluster.
+
+35
+00:02:27.333 --> 00:02:32.094
+You can set the cluster IP address in the
+service definition file, and the cluster
+
+36
+00:02:32.094 --> 00:02:36.442
+IP service provides inter service
+communication within the cluster, for
+
+37
+00:02:36.442 --> 00:02:41.357
+example, communication between the front
+end and backend components of your app.
+
+38
+00:02:41.357 --> 00:02:45.518
+An extension of Cluster IP Service,
+a NodePort Service creates and
+
+39
+00:02:45.518 --> 00:02:49.971
+routes the incoming requests
+automatically to the cluster IP service.
+
+40
+00:02:49.971 --> 00:02:55.220
+A NodePort exposes the service on each
+node's IP address at a static port.
+
+41
+00:02:55.220 --> 00:02:59.385
+Note that for security purposes,
+production use is not recommended.
+
+42
+00:02:59.385 --> 00:03:04.500
+Kubernetes exposes a single service
+with no load balancing requirements for
+
+43
+00:03:04.500 --> 00:03:05.923
+multiple services.
+
+44
+00:03:05.923 --> 00:03:10.571
+An extension of the NodePort service,
+an external load balancer, or
+
+45
+00:03:10.571 --> 00:03:14.924
+ELB, creates NodePort and
+Cluster IP services automatically.
+
+46
+00:03:14.924 --> 00:03:20.360
+An ELB integrates and automatically
+directs traffic to the NodePort service.
+
+47
+00:03:20.360 --> 00:03:25.124
+To expose a service to the Internet,
+you need a new ELB with an IP address.
+
+48
+00:03:25.124 --> 00:03:29.406
+You can use a cloud provider's
+ELB to host your cluster.
+
+49
+00:03:29.406 --> 00:03:33.104
+The external name service
+type maps to a DNS name and
+
+50
+00:03:33.104 --> 00:03:38.017
+not to any selector and
+requires a spec.externalName parameter.
+
+51
+00:03:38.017 --> 00:03:42.821
+The external name service maps the service
+to the contents of the external name
+
+52
+00:03:42.821 --> 00:03:45.827
+field that returns a CNAME record and
+its value.
+
+53
+00:03:45.827 --> 00:03:50.177
+You can use an external name to create
+a service that represents external
+
+54
+00:03:50.177 --> 00:03:54.681
+storage and enables Pods from different
+namespaces to talk to each other.
+
+55
+00:03:54.681 --> 00:03:59.424
+Next, Ingress is an API object that,
+when combined with a controller,
+
+56
+00:03:59.424 --> 00:04:03.082
+provides routing rules to
+manage external users access
+
+57
+00:04:03.082 --> 00:04:06.211
+to multiple services in
+a Kubernetes cluster.
+
+58
+00:04:06.211 --> 00:04:10.654
+In production,
+Ingress exposes applications to
+
+59
+00:04:10.654 --> 00:04:16.056
+the Internet via port 80 for
+HTTP or port 443 for HTTPs.
+
+60
+00:04:16.056 --> 00:04:18.432
+While the cluster monitors Ingress,
+
+61
+00:04:18.432 --> 00:04:23.194
+an external load balancer is expensive and
+is managed outside the cluster.
+
+62
+00:04:23.194 --> 00:04:28.035
+A DaemonSet is an object that makes
+sure that nodes run a copy of a Pod.
+
+63
+00:04:28.035 --> 00:04:32.470
+As nodes are added to a cluster,
+Pods are added to the nodes.
+
+64
+00:04:32.470 --> 00:04:36.231
+Pods are garbage collected
+when removed from a cluster.
+
+65
+00:04:36.231 --> 00:04:40.025
+If you delete a DaemonSet,
+all Pods are removed.
+
+66
+00:04:40.025 --> 00:04:45.459
+DaemonSets are ideally used for
+storage, logs, and monitoring nodes.
+
+67
+00:04:45.459 --> 00:04:49.639
+A StatefulSet is an object that
+manages stateful applications,
+
+68
+00:04:49.639 --> 00:04:52.527
+manages deployment and
+scaling of Pods, and
+
+69
+00:04:52.527 --> 00:04:56.709
+provides guarantees about the ordering and
+uniqueness of Pods.
+
+70
+00:04:56.709 --> 00:05:00.888
+A StatefulSet maintains a sticky
+identity for each Pod request, and
+
+71
+00:05:00.888 --> 00:05:04.500
+provides persistent storage volumes for
+your workloads.
+
+72
+00:05:04.500 --> 00:05:09.785
+And lastly, a Job creates Pods and
+tracks the Pod completion process.
+
+73
+00:05:09.785 --> 00:05:12.487
+Jobs are retried until completed.
+
+74
+00:05:12.487 --> 00:05:15.260
+Deleting a Job will
+remove the created Pods.
+
+75
+00:05:15.260 --> 00:05:19.802
+Suspending a Job will delete its
+active Pods until the Job resumes.
+
+76
+00:05:19.802 --> 00:05:22.660
+A Job can run several Pods in parallel and
+
+77
+00:05:22.660 --> 00:05:27.630
+CronJobs are regularly used to create
+Jobs on an iterative schedule.
+
+78
+00:05:27.630 --> 00:05:31.641
+In this video, you learn that,
+a service in Kubernetes is a REST
+
+79
+00:05:31.641 --> 00:05:35.892
+object that provides policies for
+accessing the Pods and cluster.
+
+80
+00:05:35.892 --> 00:05:39.453
+Cluster IP is the default and
+most common service type and
+
+81
+00:05:39.453 --> 00:05:43.248
+provides inter service
+communication within the cluster.
+
+82
+00:05:43.248 --> 00:05:47.561
+An extension of Cluster IP Service,
+a NodePort Service creates and
+
+83
+00:05:47.561 --> 00:05:52.188
+routes the incoming requests
+automatically to the Cluster IP Service.
+
+84
+00:05:52.188 --> 00:05:54.653
+An extension of the NodePort Service,
+
+85
+00:05:54.653 --> 00:06:00.041
+an External Load Balancer creates NodePort
+and Cluster IP Services automatically.
+
+86
+00:06:00.041 --> 00:06:04.389
+An Ingress is an API object that,
+when combined with a controller,
+
+87
+00:06:04.389 --> 00:06:07.138
+provides routing rules to manage external
+
+88
+00:06:07.138 --> 00:06:11.201
+users' access to multiple
+services in a Kubernetes cluster.
+
+89
+00:06:11.201 --> 00:06:15.899
+You also learned that using a DaemonSet
+ensures that there is at least one
+
+90
+00:06:15.899 --> 00:06:18.374
+instance of the Pod on all your nodes.
+
+91
+00:06:18.374 --> 00:06:22.999
+You can use External Name to create
+a Service that represents external storage
+
+92
+00:06:22.999 --> 00:06:26.934
+and enables Pods from different
+namespaces to talk to each other.
+
+93
+00:06:26.934 --> 00:06:31.315
+A StatefulSet manages stateful
+applications, manages Pod deployment and
+
+94
+00:06:31.315 --> 00:06:35.079
+scaling, maintains a sticky identity for
+each Pod request, and
+
+95
+00:06:35.079 --> 00:06:38.512
+provides persistent storage volumes for
+your workloads.
+
+96
+00:06:38.512 --> 00:06:43.864
+And finally, a Job creates Pods and
+tracks the Pod completion process.
+
+97
+00:06:43.864 --> 00:06:47.208
+Jobs are retried until completed.
+
+98
+00:06:47.208 --> 00:06:47.708
+[MUSIC]
