@@ -2,14 +2,16 @@
 
 ## Table of Contents
 
-- [Introduction](#introduction)
-- [Challenges of Container Management](#challenges-of-container-management)
-- [Need for Container Orchestration](#need-for-container-orchestration)
-- [Container Orchestration Features](#container-orchestration-features)
-- [How does Container orchestration work?](#how-does-container-orchestration-work)
-- [Popular Container Orchestration Tools](#popular-container-orchestration-tools)
-- [Container Orchestration benefits](#container-orchestration-benefits)
-- [Summary](#summary)
+- [Module 2 - Section 1: Video - Container Orchestration](#module-2---section-1-video---container-orchestration)
+  - [Table of Contents](#table-of-contents)
+  - [Introduction](#introduction)
+  - [Challenges of Container Management](#challenges-of-container-management)
+  - [Need for Container Orchestration](#need-for-container-orchestration)
+  - [Container Orchestration Features](#container-orchestration-features)
+  - [How does Container orchestration work?](#how-does-container-orchestration-work)
+  - [Popular Container Orchestration Tools](#popular-container-orchestration-tools)
+  - [Container Orchestration benefits](#container-orchestration-benefits)
+  - [Summary](#summary)
 
 ## Introduction
 

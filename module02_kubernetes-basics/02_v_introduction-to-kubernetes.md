@@ -2,13 +2,22 @@
 
 ## Table of Contents
 
-- [Introduction](#introduction)
-- [What is Kubernetes?](#what-is-kubernetes)
-- [What Kubernetes is Not](#what-kubernetes-is-not)
-- [Kubernetes Concepts](#kubernetes-concepts)
-- [Kubernetes Capabilities](#kubernetes-capabilities)
-- [Kubernetes Ecosystem](#kubernetes-ecosystem)
-- [Summary](#summary)
+- [Module 2 - Section 2: Video - Introduction to Kubernetes](#module-2---section-2-video---introduction-to-kubernetes)
+  - [Table of Contents](#table-of-contents)
+  - [Introduction](#introduction)
+  - [What is Kubernetes?](#what-is-kubernetes)
+  - [What Kubernetes is Not](#what-kubernetes-is-not)
+  - [Kubernetes Concepts](#kubernetes-concepts)
+  - [Kubernetes Capabilities](#kubernetes-capabilities)
+  - [Kubernetes Ecosystem](#kubernetes-ecosystem)
+    - [Public Cloud Providers](#public-cloud-providers)
+    - [Open Source Framework Providers](#open-source-framework-providers)
+    - [Management Providers](#management-providers)
+    - [Tool Providers](#tool-providers)
+    - [Monitoring and Logging Providers](#monitoring-and-logging-providers)
+    - [Security Providers](#security-providers)
+    - [Load Balancing Providers](#load-balancing-providers)
+  - [Summary](#summary)
 
 ## Introduction
 

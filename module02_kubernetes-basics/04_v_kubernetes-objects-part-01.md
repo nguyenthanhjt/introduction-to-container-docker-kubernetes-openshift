@@ -2,14 +2,17 @@
 
 ## Table of Contents
 
-- [Introduction](#introduction)
-- [Defining Kubernetes Objects](#defining-kubernetes-objects)
+- [Module 2 - Section 4: Video - Kubernetes Objects Part 1](#module-2---section-4-video---kubernetes-objects-part-1)
+  - [Table of Contents](#table-of-contents)
+  - [Introduction](#introduction)
+  - [Defining Kubernetes Objects](#defining-kubernetes-objects)
   - [Basic Kubernetes Objects](#basic-kubernetes-objects)
     - [Labels and Selectors](#labels-and-selectors)
-    - [Namespaces](#namespaces)
+    - [Namespaces and names](#namespaces-and-names)
     - [Pods](#pods)
     - [Replica Sets](#replica-sets)
     - [Deployments](#deployments)
+  - [Summary](#summary)
 
 ## Introduction
 
@@ -19,7 +22,7 @@ Welcome to Kubernetes Objects Part 1. After this section, you will be able to de
 
 ## Defining Kubernetes Objects
 
-In the real world, an object is something that has an identity, a state, and a behavior. A window or a shopping cart are examples of objects. 
+In the real world, an object is something that has an identity, a state, and a behavior. A window or a shopping cart are examples of objects.
 
 ![x](resources/04/01-01-software-object.png)
 
@@ -31,7 +34,7 @@ Another term is entity, which also has an identity and associated data. For exam
 
 ![x](resources/04/01-03-persistent.png)
 
-Finally, the term persistent means something will last even if there is a server failure or network attack. An example is persistent storage. 
+Finally, the term persistent means something will last even if there is a server failure or network attack. An example is persistent storage.
 
 ![x](resources/04/02-what-are-kubernetes-objects-01.png)
 
@@ -49,7 +52,7 @@ Kubernetes objects consist of two main fields: object spec and status.
 - Status is
   - Provided by Kubernetes
   - This describes the current state of the object.
- 
+
 Kubernetes works towards matching the current state to the desired state. To work with these objects, use the Kubernetes API directly with the client libraries and the kubectl command-line interface or both.
 
 ### Labels and Selectors
@@ -86,14 +89,14 @@ Kubernetes works towards matching the current state to the desired state. To wor
 - A pod is the simplest unit in Kubernetes.
 - A pod represents a process or a single instance of an application running in the cluster.
 - A pod usually wraps one or more containers,
-- Creating replicas of a pod serves to scale an application horizontally. 
+- Creating replicas of a pod serves to scale an application horizontally.
 - YAML files are often used to define the object that you want to create.
   - The YAML file shown defines a simple pod:
     - ![x](resources/04/05-pods-02.png)
   - The `kind` field specifies the kind of object to be created. In this case, we create a pod.
-  - The `spec` field provides the appropriate fields for the object to be created such as the containers that will run in this pod. 
+  - The `spec` field provides the appropriate fields for the object to be created such as the containers that will run in this pod.
     - A pod `spec` must contain at least one container. In this example, the container is named nginx.
-    - The `image` field dictates which image will run in the pod 
+    - The `image` field dictates which image will run in the pod
     - `ports` array lists the ports that the container exposes.
 
 ### Replica Sets
@@ -104,7 +107,7 @@ Kubernetes works towards matching the current state to the desired state. To wor
   - The `kind` field specifies the kind of object to be created. In this case, we create a `replicaSet`.
   - The `replicas` field specifies:
     - Number of replicas that should be running at any given time:
-      - whenever this field is updated, the replica set creates or deletes pods to meet the desired number of replicas. 
+      - whenever this field is updated, the replica set creates or deletes pods to meet the desired number of replicas.
   - `template`: pod template
     - ![x](resources/04/06-replica-set-03-pod-template.png)
     - A pod template is included in the replica set spec, which defines the pods that should be created by the replica set.
@@ -114,7 +117,7 @@ Kubernetes works towards matching the current state to the desired state. To wor
     - Notice that the label identified in the `matchLabels` field is the same as the `labels` field in the pod `template`.
       - Both are the `app: nginx`
       - ![x](resources/04/06-replica-set-05-selector-vs-pod-template.png)
--  Creating replica sets directly is not recommended. Instead, create a deployment, which is a higher-level concept that manages replica sets and offers more features and better control.
+- Creating replica sets directly is not recommended. Instead, create a deployment, which is a higher-level concept that manages replica sets and offers more features and better control.
 
 ### Deployments
 
@@ -144,4 +147,3 @@ In this section, you learned that Kubernetes objects are persistent entities. Th
 - Pods represent a process or an instance of an app running in a cluster
 - ReplicaSets create and manage horizontally scaled running Pods
 - Deployments provide updates for Pods and ReplicaSets
-

@@ -2,10 +2,12 @@
 
 ## Table of Contents
 
-- [Introduction](#introduction)
-- [KubernetesControl Plane](#kubernetes-control-plane)
-- [Nodes](#nodes)
-- [Summary](#summary)
+- [Module 2 - Section# Module 2 - Section 3: Video - Kubernetes Architecture](#module-2---section-module-2---section-3-video---kubernetes-architecture)
+  - [Table of Contents](#table-of-contents)
+  - [Introduction](#introduction)
+  - [Kubernetes Control Plane](#kubernetes-control-plane)
+  - [Nodes](#nodes)
+  - [Summary](#summary)
 
 ## Introduction
 
