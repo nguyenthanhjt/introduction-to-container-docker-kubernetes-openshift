@@ -16,19 +16,40 @@
 
 ## Introduction
 
+![x](resources/05/agenda.png)
+
 In this video, you will learn about various Kubernetes objects and their functionalities.
 
 ## StatefulSet
 
-A StatefulSet manages deployment and scaling of Pods, and provides guarantees about the ordering and uniqueness of Pods. It maintains a sticky identity for each Pod request and provides persistent storage volumes for your workloads.
+A StatefulSet manages deployment and scaling of Pods, and provides guarantees about the ordering and uniqueness of Pods. 
+
+It maintains a sticky identity for each Pod request and provides persistent storage volumes for your workloads.
 
 ## Job
 
-A Job creates Pods and tracks the Pod completion process. Jobs are retried until completed. Deleting a Job will remove the created Pods. Suspending a Job will delete its active Pods until the Job resumes. A Job can run several Pods in parallel, and CronJobs are regularly used to create Jobs on an iterative schedule.
+A Job creates Pods and tracks the Pod completion process. 
+
+Jobs are retried until completed. Deleting a Job will remove the created Pods. 
+
+Suspending a Job will delete its active Pods until the Job resumes. 
+
+A Job can run several Pods in parallel, and CronJobs are regularly used to create Jobs on an iterative schedule.
 
 ## Service
 
-A service in Kubernetes is a REST object that provides policies for accessing the Pods and cluster.
+![x](resources/05/01-service.png)
+
+A service in Kubernetes:
+
+- Is a REST object , like Pods.
+- Is a logical abstraction that represents a set of Pods in a cluster.
+- Provides policies that define how to access the associated Pods and cluster.
+- Acts as a load balancer across the Pods.
+- Is assigned a unique IP address for accessing applications deployed on Pods.
+- Eliminates the need for a separate service discovery process/mechanism.
+ 
+[More about Kubernetes Service](05_01_kubernetes-service.md)
 
 ## Cluster IP
 
