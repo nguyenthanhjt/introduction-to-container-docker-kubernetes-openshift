@@ -1,0 +1,510 @@
+WEBVTT
+
+1
+00:00:07.054 --> 00:00:08.960
+[MUSIC]
+Welcome to using Kubectl.
+
+2
+00:00:08.960 --> 00:00:14.700
+After watching this video you will be able
+define Kubectl and the command structure.
+
+3
+00:00:14.700 --> 00:00:18.898
+List the three command types,
+their features and advantages,
+
+4
+00:00:18.898 --> 00:00:22.718
+and list commonly used commands
+with specific examples.
+
+5
+00:00:22.718 --> 00:00:27.060
+Kubectl is the Kubernetes
+command line interface or CLI.
+
+6
+00:00:27.060 --> 00:00:30.920
+Kubectl stands for kube command tool line.
+
+7
+00:00:30.920 --> 00:00:34.951
+Kubectl is one of the key tools for
+working with Kubernetes, and
+
+8
+00:00:34.951 --> 00:00:39.878
+it helps users deploy applications,
+inspect and manage cluster resources,
+
+9
+00:00:39.878 --> 00:00:41.306
+view logs, and more.
+
+10
+00:00:41.306 --> 00:00:45.225
+It provides many features for users
+who work with Kubernetes clusters and
+
+11
+00:00:45.225 --> 00:00:47.195
+manage running cluster workloads.
+
+12
+00:00:47.195 --> 00:00:51.179
+And three Kubectl command
+types are imperative commands,
+
+13
+00:00:51.179 --> 00:00:53.730
+imperative object configuration and
+
+14
+00:00:53.730 --> 00:00:59.402
+declarative object configuration Kubectl
+commands use the following structure.
+
+15
+00:00:59.402 --> 00:01:02.356
+Keeping each component
+in order is critical.
+
+16
+00:01:02.356 --> 00:01:06.965
+Command means any operation
+to be performed like create,
+
+17
+00:01:06.965 --> 00:01:09.041
+get, apply, or delete.
+
+18
+00:01:09.041 --> 00:01:13.135
+Type means resource type,
+like pod deployment or
+
+19
+00:01:13.135 --> 00:01:18.203
+replica set, name means resource name,
+if applicable, and
+
+20
+00:01:18.203 --> 00:01:24.260
+flags means special options or
+modifiers that override default values.
+
+21
+00:01:24.260 --> 00:01:30.178
+Imperative commands allow you to create,
+update, and delete live objects directly.
+
+22
+00:01:30.178 --> 00:01:35.124
+Operations should be specified to
+the command as arguments or flags.
+
+23
+00:01:35.124 --> 00:01:38.016
+Imperative commands are easy to learn and
+run.
+
+24
+00:01:38.016 --> 00:01:42.610
+For example, to create a pod with
+a specific container, simply run
+
+25
+00:01:42.610 --> 00:01:47.696
+the command as shown, specifying only
+a pod name and the container image.
+
+26
+00:01:47.696 --> 00:01:50.771
+But imperative commands don't
+provide an audit trailer,
+
+27
+00:01:50.771 --> 00:01:52.993
+which is important for tracking changes.
+
+28
+00:01:52.993 --> 00:01:57.580
+They aren't flexible since options
+are limited, they don't use templates, and
+
+29
+00:01:57.580 --> 00:02:00.790
+they cannot integrate with
+change review processes, but
+
+30
+00:02:00.790 --> 00:02:03.889
+they are ideal for development and
+test environments.
+
+31
+00:02:03.889 --> 00:02:07.346
+Imperative commands do
+also have disadvantages.
+
+32
+00:02:07.346 --> 00:02:11.148
+Suppose a developer runs a command
+to deploy an application.
+
+33
+00:02:11.148 --> 00:02:14.627
+Another developer wants to deploy
+that same application, but
+
+34
+00:02:14.627 --> 00:02:17.590
+they cannot because there
+is no configuration file.
+
+35
+00:02:17.590 --> 00:02:20.975
+The second developer must check
+with the first developer for
+
+36
+00:02:20.975 --> 00:02:23.438
+the exact command to deploy and
+then run it.
+
+37
+00:02:23.438 --> 00:02:27.258
+It would be best if both developers
+used a template for the deployment,
+
+38
+00:02:27.258 --> 00:02:31.283
+since it overcomes the limitations
+of working with imperative commands.
+
+39
+00:02:31.283 --> 00:02:36.512
+In imperative object configuration,
+the qubectal command specifies
+
+40
+00:02:36.512 --> 00:02:41.576
+required operations, optional flags,
+and at least one file name.
+
+41
+00:02:41.576 --> 00:02:44.700
+The specified configuration
+file must contain
+
+42
+00:02:44.700 --> 00:02:48.376
+a full definition of the objects
+in YAML or JSON format.
+
+43
+00:02:48.376 --> 00:02:51.495
+To create the objects defined in the file,
+
+44
+00:02:51.495 --> 00:02:57.042
+run the command kubectl create
+finginx.yaml using the same configuration
+
+45
+00:02:57.042 --> 00:03:02.253
+templates in multiple environments
+will produce identical results.
+
+46
+00:03:02.253 --> 00:03:07.262
+A configuration file may be stored
+in a source control system like Git.
+
+47
+00:03:07.262 --> 00:03:11.775
+It can integrate with change processes,
+and it provides audit trails and
+
+48
+00:03:11.775 --> 00:03:14.117
+templates for creating new objects.
+
+49
+00:03:14.117 --> 00:03:19.697
+But using it requires understanding of
+the object schema and requires writing
+
+50
+00:03:19.697 --> 00:03:25.373
+a YAML or JSON file now imperative object
+configuration also has limitations.
+
+51
+00:03:25.373 --> 00:03:29.033
+You need to specify all
+necessary command operations.
+
+52
+00:03:29.033 --> 00:03:33.629
+For example, if a developer performs
+an update operation that isn't merged into
+
+53
+00:03:33.629 --> 00:03:36.426
+the configuration file,
+then another developer
+
+54
+00:03:36.426 --> 00:03:39.969
+cannot use the updated configuration
+in future deployments.
+
+55
+00:03:39.969 --> 00:03:45.012
+The second developer instead uses
+the original or previous configuration.
+
+56
+00:03:45.012 --> 00:03:48.668
+It is better to define the desired
+state in a shared configuration
+
+57
+00:03:48.668 --> 00:03:50.204
+file than when you deploy.
+
+58
+00:03:50.204 --> 00:03:54.427
+Kubernetes automatically determines
+the necessary operations.
+
+59
+00:03:54.427 --> 00:03:57.965
+This is known as declarative
+object configuration.
+
+60
+00:03:57.965 --> 00:04:02.985
+Declarative object configuration
+stores configuration data in files.
+
+61
+00:04:02.985 --> 00:04:07.644
+Operations are identified by Kubectl
+instead of being specified by the user.
+
+62
+00:04:07.644 --> 00:04:10.849
+This works on directories or
+individual files.
+
+63
+00:04:10.849 --> 00:04:15.963
+For example, the cubectal apply
+command mentions a directory as shown,
+
+64
+00:04:15.963 --> 00:04:20.513
+then applies configuration data
+to all files in that directory.
+
+65
+00:04:20.513 --> 00:04:25.278
+The user is not required to perform any
+operations since they are performed by
+
+66
+00:04:25.278 --> 00:04:27.047
+the system automatically.
+
+67
+00:04:27.047 --> 00:04:31.789
+Configuration files define a desired
+state, and Kubernetes actualizes
+
+68
+00:04:31.789 --> 00:04:36.697
+that state, and this approach is
+the ideal method for production systems.
+
+69
+00:04:36.697 --> 00:04:39.654
+Here is an example of
+declarative configuration.
+
+70
+00:04:39.654 --> 00:04:43.534
+A developer performs updates
+to a running application.
+
+71
+00:04:43.534 --> 00:04:46.779
+Since configuration data is
+stored in the shared template,
+
+72
+00:04:46.779 --> 00:04:50.734
+there is still one source of truth for
+the configuration of this project.
+
+73
+00:04:50.734 --> 00:04:54.766
+Now, even if another developer
+misses several of these updates,
+
+74
+00:04:54.766 --> 00:04:58.582
+all they need to do is apply
+the current configuration template
+
+75
+00:04:58.582 --> 00:05:01.393
+to ensure the deployed
+object is as expected.
+
+76
+00:05:01.393 --> 00:05:03.817
+Kubernetes automatically determines and
+
+77
+00:05:03.817 --> 00:05:08.604
+performs the necessary operations to match
+the current state to the desired state.
+
+78
+00:05:08.604 --> 00:05:12.716
+Here are a few of the commonly used
+Kubectl commands and descriptions.
+
+79
+00:05:12.716 --> 00:05:17.965
+The get command accesses a file
+container or any other resource.
+
+80
+00:05:17.965 --> 00:05:20.990
+The delete command deletes a file or
+container.
+
+81
+00:05:20.990 --> 00:05:26.270
+The autoscale command applies the auto
+scaling process to the selected file or
+
+82
+00:05:26.270 --> 00:05:27.876
+container, and so on.
+
+83
+00:05:27.876 --> 00:05:31.756
+You can find all Kubectl
+commands at Kubernetes IO.
+
+84
+00:05:31.756 --> 00:05:37.531
+Kubectl get commands allow you to listen
+services in a current namespace, pods
+
+85
+00:05:37.531 --> 00:05:43.409
+in all namespaces, a particular deployment
+and pods in the current namespace.
+
+86
+00:05:43.409 --> 00:05:48.310
+Kubectl apply commands create
+resources using YAML or JSON files.
+
+87
+00:05:48.310 --> 00:05:54.469
+They use extensions like .yamal.yml,
+or .json.
+
+88
+00:05:54.469 --> 00:06:00.251
+You can use apply commands to create
+resources from multiple files or
+
+89
+00:06:00.251 --> 00:06:01.255
+from a URL.
+
+90
+00:06:01.255 --> 00:06:07.012
+Kubectl scale commands scale the number
+of replicas you can use scale
+
+91
+00:06:07.012 --> 00:06:13.875
+commands to scale, a replica set named
+foo to 3, or a resourceinfu .yaml to 3.
+
+92
+00:06:13.875 --> 00:06:18.695
+Let's create a deployment with
+three replicas of the nginx image.
+
+93
+00:06:18.695 --> 00:06:21.630
+Create the deployment
+using the apply command.
+
+94
+00:06:21.630 --> 00:06:25.173
+The output confirms
+the deployment creation.
+
+95
+00:06:25.173 --> 00:06:30.040
+The get deployment command provides
+the specific my-dep deployment details.
+
+96
+00:06:30.040 --> 00:06:36.359
+The output confirms the creation of three
+replicas ready up to date and available.
+
+97
+00:06:36.359 --> 00:06:42.504
+In this video you learn that Kubectl is
+the Kubernetes command line interface.
+
+98
+00:06:42.504 --> 00:06:50.048
+The Kubectl command structure is
+Kubectl command type name flags.
+
+99
+00:06:50.048 --> 00:06:54.514
+Imperative commands are the easiest
+to learn, have no audit trail,
+
+100
+00:06:54.514 --> 00:06:55.981
+and are not flexible.
+
+101
+00:06:55.981 --> 00:07:00.723
+Imperative object configuration uses
+templates to ensure proper deployment,
+
+102
+00:07:00.723 --> 00:07:01.636
+replication.
+
+103
+00:07:01.636 --> 00:07:05.921
+And finally declarative object
+configuration is automated,
+
+104
+00:07:05.921 --> 00:07:10.216
+requires no user input, and
+is ideal for production systems.
+
+105
+00:07:10.216 --> 00:07:10.716
+[MUSIC]
