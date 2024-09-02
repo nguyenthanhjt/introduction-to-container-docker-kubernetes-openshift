@@ -6,12 +6,6 @@ This lab will demonstrate how to:
 - Build an image using a Dockerfile.
 - Push an image to IBM Cloud Container Registry.
 
-**Note**: In case you are unable to access the Open Tool button, instructions to complete this lab are also available [here](https://cf-courses-data.static.labs.skills.network/cc201/labs/1_ContainersAndDocker/instructions.md.html).
-
-This course uses a third-party app, **Hands-on Lab: Introduction to Containers, Docker and IBM Cloud Container Registry**, to enhance your learning experience.
-
-The app will reference basic information like your name, email, and Coursera ID.
-
 ## Content
 
 This lab consists of the following sections in separated files:

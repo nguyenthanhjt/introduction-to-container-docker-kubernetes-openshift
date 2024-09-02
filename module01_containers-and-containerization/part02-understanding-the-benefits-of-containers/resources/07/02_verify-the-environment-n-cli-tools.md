@@ -46,7 +46,7 @@
     Resolving deltas: 100% (13/13), done.
    ```
 
-> Refer repository [CC201](./CC201) or [Github](https://github.com/ibm-developer-skills-network/CC201.git) for the artifacts needed for this lab.
+> Refer repository [CC201](../../../../resources/CC201) or [Github](https://github.com/ibm-developer-skills-network/CC201.git) for the artifacts needed for this lab.
 
 6. **Change to the directory for this lab**:
    - Run the following command to change the working directory:

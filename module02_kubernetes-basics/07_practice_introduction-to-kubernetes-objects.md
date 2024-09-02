@@ -4,8 +4,6 @@ This practice lab is designed to provide hands-on experience with Kubernetes, fo
 
 ## Objectives
 
-After completing this lab, you will be able to:
-
 - Create a Kubernetes Service
 - Use various kubectl commands
 - Deploy a StatefulSet for managing stateful applications

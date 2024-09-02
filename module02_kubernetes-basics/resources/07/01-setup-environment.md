@@ -6,7 +6,7 @@ Open a terminal window using the menu: **Terminal > New Terminal**.
 
 ### Step 1: Verify kubectl Version
 
-Before proceeding, ensure that you have `kubectl` installed and properly configured. To check the version of `kubectl`, run the following command:
+Before proceeding, ensure that `kubectl` installed and properly configured. To check the version of `kubectl`, run the following command:
 
 ```bash
 kubectl version
