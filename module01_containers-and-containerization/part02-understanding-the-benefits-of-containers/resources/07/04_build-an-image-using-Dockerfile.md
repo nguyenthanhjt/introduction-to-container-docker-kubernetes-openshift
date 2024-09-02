@@ -2,7 +2,7 @@
 
 1. The current working directory contains a simple Node.js application that will be run in a container. The app will print a hello message along with the hostname. The following files are needed to run the app in a container:
 
-   - Refer repository [CC201](./CC201) or [Github](https://github.com/ibm-developer-skills-network/CC201.git) for the artifacts needed for this lab.
+   - Refer repository [CC201](../../../../resources/CC201) or [Github](https://github.com/ibm-developer-skills-network/CC201.git) for the artifacts needed for this lab.
      - `app.js`: The main application, which simply replies with a hello world message.
      - `package.json`: Defines the dependencies of the application.
      - `Dockerfile`: Defines the instructions Docker uses to build the image.
