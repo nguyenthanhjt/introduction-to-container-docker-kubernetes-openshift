@@ -57,20 +57,20 @@
 5. Export your namespace as an environment variable so that it can be used in subsequent commands:
 
 ```bash
-export MY_NAMESPACE=sn-labs-$USERNAME
-#export MY_NAMESPACE=sn-labs-nguyenthanhj
+#$ export MY_NAMESPACE=sn-labs-$USERNAME
+$ export MY_NAMESPACE=sn-labs-nguyenthanhj
 ```
 
 6. Tag your image so that it can be pushed to IBM Cloud Container Registry:
 
 ```bash
-docker tag myimage:v1 us.icr.io/$MY_NAMESPACE/hello-world:1
+$ docker tag myimage:v1 us.icr.io/$MY_NAMESPACE/hello-world:1
 ```
 
 7. Push the newly tagged image to IBM Cloud Container Registry:
 
   ```bash
-  docker push us.icr.io/$MY_NAMESPACE/hello-world:1
+  $ docker push us.icr.io/$MY_NAMESPACE/hello-world:1
   #output
   The push refers to repository [us.icr.io/sn-labs-nguyenthanhj/hello-world]
   c012e769a0c1: Pushed 
@@ -87,7 +87,7 @@ docker tag myimage:v1 us.icr.io/$MY_NAMESPACE/hello-world:1
 8. Verify that the image was successfully pushed by listing images in Container Registry:
 
 ```bash
-ibmcloud cr images
+$ ibmcloud cr images
 #output
 Listing images...
 
@@ -98,7 +98,7 @@ us.icr.io/sn-labs-nguyenthanhj/hello-world                               1      
 Optionally, to only view images within a specific namespace:
 
 ```bash
-ibmcloud cr images --restrict $MY_NAMESPACE
+$ ibmcloud cr images --restrict $MY_NAMESPACE
 ```
 
 - You should see your image name in the output.
