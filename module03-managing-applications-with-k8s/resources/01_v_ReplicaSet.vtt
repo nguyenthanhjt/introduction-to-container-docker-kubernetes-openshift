@@ -1,0 +1,461 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:06.978
+[MUSIC]
+
+2
+00:00:06.978 --> 00:00:09.142
+Welcome to ReplicaSet.
+
+3
+00:00:09.142 --> 00:00:13.771
+After watching this video,
+you will be able define a ReplicaSet,
+
+4
+00:00:13.771 --> 00:00:19.406
+explain how a ReplicaSet works, and
+list the benefits of using a ReplicaSet.
+
+5
+00:00:19.406 --> 00:00:22.124
+If an application is
+deployed on a single pod,
+
+6
+00:00:22.124 --> 00:00:25.214
+the pod will be unable to
+perform certain actions.
+
+7
+00:00:25.214 --> 00:00:28.848
+If requests increase,
+manifold or outages occur.
+
+8
+00:00:28.848 --> 00:00:33.683
+Single pod deployments cannot accommodate
+growing demands of the application and
+
+9
+00:00:33.683 --> 00:00:35.417
+load balancing across pods.
+
+10
+00:00:35.417 --> 00:00:38.839
+Handle outages by eliminating
+a single point of failure.
+
+11
+00:00:38.839 --> 00:00:40.138
+Minimize downtime and
+
+12
+00:00:40.138 --> 00:00:44.865
+service interruptions by providing high
+availability through redundant pods.
+
+13
+00:00:44.865 --> 00:00:48.800
+Or automatically restart deployments
+if something goes wrong.
+
+14
+00:00:48.800 --> 00:00:51.896
+We can work around these
+limitations with a ReplicaSet.
+
+15
+00:00:51.896 --> 00:00:55.960
+A ReplicaSet ensures the right number
+of pods are always up and running.
+
+16
+00:00:55.960 --> 00:01:00.314
+It always tries to match the actual state
+of the replicas to the desired state.
+
+17
+00:01:00.314 --> 00:01:03.918
+A ReplicaSet adds or deletes pods for
+scaling and redundancy,
+
+18
+00:01:03.918 --> 00:01:06.394
+which helps maintain availability.
+
+19
+00:01:06.394 --> 00:01:07.982
+It replaces failing pods or
+
+20
+00:01:07.982 --> 00:01:11.303
+deletes additional pods to
+maintain the desired state.
+
+21
+00:01:11.303 --> 00:01:15.554
+And it supersedes a ReplicaController and
+should be used instead.
+
+22
+00:01:15.554 --> 00:01:19.858
+A ReplicaSet is created for when you
+create a deployment in your cluster.
+
+23
+00:01:19.858 --> 00:01:24.479
+Deployments manage ReplicaSets,
+send pods declarative updates, and
+
+24
+00:01:24.479 --> 00:01:26.818
+have many other useful features.
+
+25
+00:01:26.818 --> 00:01:30.474
+That's why a ReplicaSet is
+best managed by a deployment.
+
+26
+00:01:30.474 --> 00:01:33.858
+Kubernetes is designed to keep
+object types independent.
+
+27
+00:01:33.858 --> 00:01:37.434
+That is why the ReplicaSet
+does not own any of the pods.
+
+28
+00:01:37.434 --> 00:01:41.807
+Instead, it uses pod labels to decide
+which pods to acquire when bringing
+
+29
+00:01:41.807 --> 00:01:44.314
+a deployment to the desired state.
+
+30
+00:01:44.314 --> 00:01:47.362
+Let's look at a deployment template here.
+
+31
+00:01:47.362 --> 00:01:49.939
+The template metadata
+defines the labels and
+
+32
+00:01:49.939 --> 00:01:53.034
+spec of potential pod candidates to add or
+delete.
+
+33
+00:01:53.034 --> 00:01:57.516
+A ReplicaSet is automatically created for
+you when you create a deployment.
+
+34
+00:01:57.516 --> 00:02:02.118
+To check this, create a deployment and
+then use a get ReplicaSet command to
+
+35
+00:02:02.118 --> 00:02:05.220
+verify that the ReplicaSet
+is generated for you.
+
+36
+00:02:05.220 --> 00:02:09.652
+By default, the ReplicaSet only
+replicates to a single pod.
+
+37
+00:02:09.652 --> 00:02:13.920
+Additionally, if you describe the pod,
+you will see the pod's details and
+
+38
+00:02:13.920 --> 00:02:16.708
+that it is controlled
+by the same ReplicaSet.
+
+39
+00:02:16.708 --> 00:02:19.286
+To create a ReplicaSet from scratch,
+
+40
+00:02:19.286 --> 00:02:24.096
+apply a YAML file with the kind
+attribute set to ReplicaSet as shown.
+
+41
+00:02:24.096 --> 00:02:28.544
+If you define the number of replicas as 1,
+you get one pod.
+
+42
+00:02:28.544 --> 00:02:32.313
+This is similar to creating a default
+without specifying the number
+
+43
+00:02:32.313 --> 00:02:34.192
+of replicas in your YAML file.
+
+44
+00:02:34.192 --> 00:02:37.424
+Lets step through creating
+a ReplicaSet from scratch.
+
+45
+00:02:37.424 --> 00:02:41.008
+First, use the create ReplicaSet command.
+
+46
+00:02:41.008 --> 00:02:44.120
+The output shows a ReplicaSet was created.
+
+47
+00:02:44.120 --> 00:02:49.401
+Confirm it was created by using the get
+pods command and observe the status
+
+48
+00:02:49.401 --> 00:02:54.525
+as running and then use the get rs
+command, rs is short for ReplicaSet.
+
+49
+00:02:54.525 --> 00:02:56.829
+And the output shows the name and
+
+50
+00:02:56.829 --> 00:03:01.276
+other details of the newly
+created replica set and its pod.
+
+51
+00:03:01.276 --> 00:03:06.104
+But remember, creating a deployment that
+includes a ReplicaSet is recommended
+
+52
+00:03:06.104 --> 00:03:08.598
+over creating a standalone ReplicaSet.
+
+53
+00:03:08.598 --> 00:03:13.529
+Before you scale a deployment, you must
+ensure you have a deployment and a pod.
+
+54
+00:03:13.529 --> 00:03:17.890
+To do this, Create a deployment
+using the create command.
+
+55
+00:03:17.890 --> 00:03:20.962
+The output will confirm
+a deployment was created.
+
+56
+00:03:20.962 --> 00:03:23.711
+The deployment creates
+a pod by default and
+
+57
+00:03:23.711 --> 00:03:27.074
+you can confirm this
+with the getpods command.
+
+58
+00:03:27.074 --> 00:03:30.546
+The output shows the pod name and
+other details.
+
+59
+00:03:30.546 --> 00:03:34.514
+You can check the deployment details
+with the get deploy command.
+
+60
+00:03:34.514 --> 00:03:38.730
+The output shows the deployment
+is named hello-kubernetes.
+
+61
+00:03:38.730 --> 00:03:43.457
+Now, once the deployment and pod are in
+place, use the scale command to scale
+
+62
+00:03:43.457 --> 00:03:47.054
+the deployment and
+set the desired number of replicas.
+
+63
+00:03:47.054 --> 00:03:49.818
+Here we set the number
+of replicas to three and
+
+64
+00:03:49.818 --> 00:03:52.878
+the output confirms
+the deployment is scaled.
+
+65
+00:03:52.878 --> 00:03:57.382
+If you use the getpods command
+you will see three pods running.
+
+66
+00:03:57.382 --> 00:04:01.544
+The ReplicaSet created two new pods,
+
+67
+00:04:01.544 --> 00:04:07.714
+one ending in 5mflw and
+the other ending in hbt7v.
+
+68
+00:04:07.714 --> 00:04:12.738
+Lets observe how the ReplicaSet maintains
+the desired state when the pod is deleted.
+
+69
+00:04:12.738 --> 00:04:16.066
+First, use the get pods command.
+
+70
+00:04:16.066 --> 00:04:19.914
+Our three pods appear in
+the output as expected.
+
+71
+00:04:19.914 --> 00:04:26.834
+Now, use the delete pod command to
+delete the pod ending in 5mflw.
+
+72
+00:04:26.834 --> 00:04:29.464
+The pod ending in 5mflw is deleted.
+
+73
+00:04:29.464 --> 00:04:34.614
+And notice that the desired state
+does not match the actual state and
+
+74
+00:04:34.614 --> 00:04:39.574
+that the deleted pod is replaced
+by a new pod automatically.
+
+75
+00:04:39.574 --> 00:04:43.054
+Now use the get pods command again.
+
+76
+00:04:43.054 --> 00:04:47.856
+The output shows the ReplicaSet
+immediately created a new
+
+77
+00:04:47.856 --> 00:04:49.958
+pod ending in 6lw4r.
+
+78
+00:04:49.958 --> 00:04:52.645
+To get the total number
+of pods back to three,
+
+79
+00:04:52.645 --> 00:04:55.598
+the ReplicaSet maintains
+the desired state.
+
+80
+00:04:55.598 --> 00:04:59.882
+Let's now observe how the ReplicaSet
+maintains desired state when a pod is
+
+81
+00:04:59.882 --> 00:05:00.626
+created.
+
+82
+00:05:00.626 --> 00:05:04.349
+The getpods command shows
+our three pods from before.
+
+83
+00:05:04.349 --> 00:05:11.074
+Use the create pod command to
+create a pod ending in mx9rp.
+
+84
+00:05:11.074 --> 00:05:16.714
+Then use the get pods command again and
+the output now shows four pods.
+
+85
+00:05:16.714 --> 00:05:19.623
+Desired state does not match actual state.
+
+86
+00:05:19.623 --> 00:05:23.457
+Since the ReplicaSet always strives
+to match the actual state to
+
+87
+00:05:23.457 --> 00:05:24.666
+the desired state.
+
+88
+00:05:24.666 --> 00:05:31.982
+The new pod ending in mx9rp is marked for
+deletion and removed automatically.
+
+89
+00:05:31.982 --> 00:05:37.092
+The get pods command now shows the total
+number of pods restored to three.
+
+90
+00:05:37.092 --> 00:05:41.350
+And once again the ReplicaSet
+maintains the desired state.
+
+91
+00:05:41.350 --> 00:05:42.321
+In this video,
+
+92
+00:05:42.321 --> 00:05:47.598
+you learned that a ReplicaSet provides
+high availability through redundancy.
+
+93
+00:05:47.598 --> 00:05:51.666
+A ReplicaSet enables scaling
+by creating or deleting pods.
+
+94
+00:05:51.666 --> 00:05:56.440
+You can create a ReplicaSet using
+the CLI or the YAML descriptor.
+
+95
+00:05:56.440 --> 00:06:01.113
+A ReplicaSet always tries to match
+the actual state to the desired state.
+
+96
+00:06:01.113 --> 00:06:06.395
+And a best practice is to use a deployment
+instead of a ReplicaSet directly.
+
+97
+00:06:06.395 --> 00:06:06.895
+[SOUND]
