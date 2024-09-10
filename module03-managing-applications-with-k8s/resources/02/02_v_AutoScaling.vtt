@@ -1,0 +1,732 @@
+WEBVTT
+
+1
+00:00:06.470 --> 00:00:10.115
+Hello, and welcome
+to auto-scaling.
+
+2
+00:00:10.115 --> 00:00:11.660
+After watching this video,
+
+3
+00:00:11.660 --> 00:00:14.820
+you will be able to
+define auto-scaling.
+
+4
+00:00:14.820 --> 00:00:17.340
+Explain the three
+types of auto scalers,
+
+5
+00:00:17.340 --> 00:00:20.180
+and demonstrate how
+each auto scaler works.
+
+6
+00:00:20.180 --> 00:00:23.040
+Replica sets provide a
+good start for scaling,
+
+7
+00:00:23.040 --> 00:00:24.360
+but you don't always want
+
+8
+00:00:24.360 --> 00:00:26.860
+ten instances of your
+resource running.
+
+9
+00:00:26.860 --> 00:00:29.150
+You should be able
+to scale as needed.
+
+10
+00:00:29.150 --> 00:00:32.640
+Kubernetes auto-scaling helps
+optimize resource usage and
+
+11
+00:00:32.640 --> 00:00:34.760
+costs by automatically scaling
+
+12
+00:00:34.760 --> 00:00:36.640
+a cluster in line with demand.
+
+13
+00:00:36.640 --> 00:00:40.160
+Kubernetes enables auto-scaling
+at two different layers,
+
+14
+00:00:40.160 --> 00:00:43.320
+the cluster or node
+level and the pod level.
+
+15
+00:00:43.320 --> 00:00:46.840
+Three types of auto scalars
+are available in Kubernetes,
+
+16
+00:00:46.840 --> 00:00:49.980
+horizontal pod auto
+scalar or HPA,
+
+17
+00:00:49.980 --> 00:00:52.780
+vertical pod auto scalar or VPA,
+
+18
+00:00:52.780 --> 00:00:55.900
+and cluster auto scalar or CA.
+
+19
+00:00:55.900 --> 00:00:57.955
+To create auto-scaling,
+
+20
+00:00:57.955 --> 00:01:00.340
+list the current number
+and state of pods.
+
+21
+00:01:00.340 --> 00:01:02.815
+You have one pod
+in this scenario.
+
+22
+00:01:02.815 --> 00:01:04.160
+A replica set is
+
+23
+00:01:04.160 --> 00:01:06.820
+automatically created when
+you create a deployment.
+
+24
+00:01:06.820 --> 00:01:08.550
+In order to auto-scale,
+
+25
+00:01:08.550 --> 00:01:10.600
+you simply use the
+autoscale command
+
+26
+00:01:10.600 --> 00:01:12.525
+with the requisite attributes.
+
+27
+00:01:12.525 --> 00:01:15.410
+Min is the number
+of minimum pods.
+
+28
+00:01:15.410 --> 00:01:19.195
+Notice that we have changed
+the value of min to two.
+
+29
+00:01:19.195 --> 00:01:22.130
+Max is the number
+of maximum pods,
+
+30
+00:01:22.130 --> 00:01:24.450
+and CPU percent acts
+
+31
+00:01:24.450 --> 00:01:26.490
+as a trigger that tells
+the system to create
+
+32
+00:01:26.490 --> 00:01:28.750
+a new pod when the CPU usage
+
+33
+00:01:28.750 --> 00:01:31.310
+reaches 50% across the cluster.
+
+34
+00:01:31.310 --> 00:01:33.890
+In the background,
+the deployment still
+
+35
+00:01:33.890 --> 00:01:36.650
+uses the replica set
+to scale up and down.
+
+36
+00:01:36.650 --> 00:01:38.630
+Notice the numbers
+of replicas in
+
+37
+00:01:38.630 --> 00:01:41.170
+this auto-scaled replica
+set has changed to
+
+38
+00:01:41.170 --> 00:01:43.630
+two since the minimum
+number specified
+
+39
+00:01:43.630 --> 00:01:46.835
+in the previous autoscale
+command was changed to two.
+
+40
+00:01:46.835 --> 00:01:49.195
+Now, in Kubernetes,
+
+41
+00:01:49.195 --> 00:01:51.440
+there are three
+autoscaling types.
+
+42
+00:01:51.440 --> 00:01:53.700
+The horizontal pod auto scalar
+
+43
+00:01:53.700 --> 00:01:55.860
+or HPA adjusts the number of
+
+44
+00:01:55.860 --> 00:01:57.860
+replicas of an application by
+
+45
+00:01:57.860 --> 00:02:00.520
+increasing or decreasing
+the number of pods.
+
+46
+00:02:00.520 --> 00:02:02.620
+The vertical pod auto scalar or
+
+47
+00:02:02.620 --> 00:02:05.580
+VPA adjusts the resource
+requests and limits of
+
+48
+00:02:05.580 --> 00:02:07.900
+a container by
+increasing or decreasing
+
+49
+00:02:07.900 --> 00:02:10.775
+the resource size or
+speed of the pods.
+
+50
+00:02:10.775 --> 00:02:12.750
+The cluster auto scaler or
+
+51
+00:02:12.750 --> 00:02:15.850
+CA adjusts the number of
+nodes in the cluster when
+
+52
+00:02:15.850 --> 00:02:17.970
+pods fail to schedule or demand
+
+53
+00:02:17.970 --> 00:02:21.250
+increases or decreases in
+relation to the nodes capacity.
+
+54
+00:02:21.250 --> 00:02:24.970
+In Kubernetes, an HPA
+automatically updates
+
+55
+00:02:24.970 --> 00:02:27.295
+a workload resource
+like a deployment
+
+56
+00:02:27.295 --> 00:02:30.690
+by horizontally scaling the
+workload to match the demand.
+
+57
+00:02:30.690 --> 00:02:35.130
+Horizontal scaling or scaling
+out automatically increases
+
+58
+00:02:35.130 --> 00:02:36.530
+or decreases the number of
+
+59
+00:02:36.530 --> 00:02:39.615
+running pods as
+application usage changes.
+
+60
+00:02:39.615 --> 00:02:42.470
+An HPA uses a cluster operator
+
+61
+00:02:42.470 --> 00:02:44.350
+that sets targets
+for metrics like
+
+62
+00:02:44.350 --> 00:02:46.830
+CPU or memory
+utilization and the
+
+63
+00:02:46.830 --> 00:02:49.945
+maximum and minimum desired
+number of replicas.
+
+64
+00:02:49.945 --> 00:02:53.900
+For example, the system load
+is low early in the morning,
+
+65
+00:02:53.900 --> 00:02:55.740
+so one pod is sufficient.
+
+66
+00:02:55.740 --> 00:02:58.500
+The HPA auto-scales
+the workload resource
+
+67
+00:02:58.500 --> 00:03:00.080
+to meet usage demands.
+
+68
+00:03:00.080 --> 00:03:04.395
+By 11:00 A.M. Peak load
+drives a need for three pods.
+
+69
+00:03:04.395 --> 00:03:07.140
+The HPA auto-scales
+the workload resource
+
+70
+00:03:07.140 --> 00:03:08.700
+to meet usage demand.
+
+71
+00:03:08.700 --> 00:03:10.780
+Usage drops in the afternoon,
+
+72
+00:03:10.780 --> 00:03:13.820
+so the third pod is marked
+for deletion and removed,
+
+73
+00:03:13.820 --> 00:03:16.300
+and usage drops
+even lower by 5:00
+
+74
+00:03:16.300 --> 00:03:19.975
+P.M. Another pod is marked
+for deletion and removed.
+
+75
+00:03:19.975 --> 00:03:22.740
+Another way to enable
+auto-scaling is to
+
+76
+00:03:22.740 --> 00:03:26.370
+manually create the HPA
+object for a YAML file.
+
+77
+00:03:26.370 --> 00:03:28.660
+Similar to the
+autoscale command,
+
+78
+00:03:28.660 --> 00:03:31.660
+you can set the minimum and
+maximum number of pods.
+
+79
+00:03:31.660 --> 00:03:34.580
+The CPU percent
+flag shows up as,
+
+80
+00:03:34.580 --> 00:03:37.340
+target CPU utilization
+percentage,
+
+81
+00:03:37.340 --> 00:03:39.020
+and even though you can create
+
+82
+00:03:39.020 --> 00:03:41.260
+an HPA autoscaler from scratch,
+
+83
+00:03:41.260 --> 00:03:44.400
+you should use the
+autoscale command instead.
+
+84
+00:03:44.400 --> 00:03:47.340
+A best practice is to
+scale horizontally,
+
+85
+00:03:47.340 --> 00:03:48.840
+but there are some services
+
+86
+00:03:48.840 --> 00:03:50.480
+you may want to
+run in a cluster,
+
+87
+00:03:50.480 --> 00:03:54.010
+where horizontal scaling is
+impossible or not ideal.
+
+88
+00:03:54.010 --> 00:03:56.520
+Vertical scaling or scaling up
+
+89
+00:03:56.520 --> 00:04:00.140
+refers to adding more resources
+to an existing machine.
+
+90
+00:04:00.140 --> 00:04:01.940
+A VPA lets you scale
+
+91
+00:04:01.940 --> 00:04:03.880
+a service vertically
+within a cluster.
+
+92
+00:04:03.880 --> 00:04:06.060
+The cluster operator
+sets targets for
+
+93
+00:04:06.060 --> 00:04:09.020
+metrics like CPU or
+memory utilization,
+
+94
+00:04:09.020 --> 00:04:10.900
+similar to an HPA.
+
+95
+00:04:10.900 --> 00:04:14.260
+The cluster then reconciles
+the size of the services pod
+
+96
+00:04:14.260 --> 00:04:15.560
+or pods based on
+
+97
+00:04:15.560 --> 00:04:17.920
+their current usage and
+the desired target.
+
+98
+00:04:17.920 --> 00:04:21.780
+For example, the system load
+is low early in the morning,
+
+99
+00:04:21.780 --> 00:04:23.660
+so system resources used by
+
+100
+00:04:23.660 --> 00:04:26.300
+the pod are low. By 11:00 A.M.
+
+101
+00:04:26.300 --> 00:04:29.130
+Peak load drives a need
+for more capacity.
+
+102
+00:04:29.130 --> 00:04:31.260
+The VPA auto-scales the pod
+
+103
+00:04:31.260 --> 00:04:33.200
+by adding more system resources,
+
+104
+00:04:33.200 --> 00:04:36.180
+CPU, and memory to
+meet the demand.
+
+105
+00:04:36.180 --> 00:04:38.215
+Usage drops in the afternoon.
+
+106
+00:04:38.215 --> 00:04:41.580
+The pod is auto-scaled to
+use fewer system resources,
+
+107
+00:04:41.580 --> 00:04:44.710
+and usage drops even
+lower by 5:00 P.M.
+
+108
+00:04:44.710 --> 00:04:46.520
+The pod is auto-scaled further
+
+109
+00:04:46.520 --> 00:04:48.540
+to match the 7:00 A.M. Levels.
+
+110
+00:04:48.540 --> 00:04:51.120
+You should not use
+VPAs with HPAs
+
+111
+00:04:51.120 --> 00:04:53.800
+on resource metrics
+like CPU or memory.
+
+112
+00:04:53.800 --> 00:04:55.640
+However, you can use them
+
+113
+00:04:55.640 --> 00:04:58.240
+together on custom
+or external metrics.
+
+114
+00:04:58.240 --> 00:05:01.040
+A CA auto-scales
+the cluster itself,
+
+115
+00:05:01.040 --> 00:05:03.040
+increasing or decreasing
+the number of
+
+116
+00:05:03.040 --> 00:05:05.295
+available nodes that
+pods can run on.
+
+117
+00:05:05.295 --> 00:05:08.840
+Pods are auto-scaled
+using HPA or VPA.
+
+118
+00:05:08.840 --> 00:05:11.920
+But when the nodes themselves
+are overloaded with pods,
+
+119
+00:05:11.920 --> 00:05:14.800
+you can use a CA to
+auto-scale the nodes
+
+120
+00:05:14.800 --> 00:05:16.540
+so that the pods can rebalance
+
+121
+00:05:16.540 --> 00:05:18.300
+themselves across the cluster.
+
+122
+00:05:18.300 --> 00:05:22.080
+For example, the system load
+is low early in the morning,
+
+123
+00:05:22.080 --> 00:05:24.380
+so existing nodes
+can handle the load.
+
+124
+00:05:24.380 --> 00:05:27.760
+When demand increases,
+new pod requests come in,
+
+125
+00:05:27.760 --> 00:05:30.320
+and the CA auto-scales
+the cluster by adding
+
+126
+00:05:30.320 --> 00:05:34.450
+a new node and pod to meet
+the demand. By 11:00 A.M.
+
+127
+00:05:34.450 --> 00:05:37.570
+Peak load brings the new
+node to full capacity.
+
+128
+00:05:37.570 --> 00:05:40.050
+When usage drops
+in the afternoon,
+
+129
+00:05:40.050 --> 00:05:43.280
+unused pods are marked
+for deletion and removed.
+
+130
+00:05:43.280 --> 00:05:46.430
+When usage drops even
+lower by 5:00 P.M.
+
+131
+00:05:46.430 --> 00:05:48.110
+All pods in the new node are
+
+132
+00:05:48.110 --> 00:05:50.180
+marked for deletion and removed.
+
+133
+00:05:50.180 --> 00:05:53.720
+Then the node itself
+is marked and removed.
+
+134
+00:05:53.720 --> 00:05:56.290
+A cluster auto scaler ensures
+
+135
+00:05:56.290 --> 00:05:59.510
+there is always enough computer
+power to run your tasks,
+
+136
+00:05:59.510 --> 00:06:03.050
+and that you aren't paying
+extra for unused nodes.
+
+137
+00:06:03.050 --> 00:06:05.650
+For example, nights
+and weekends may have
+
+138
+00:06:05.650 --> 00:06:09.170
+pure development or continuous
+integration testing loads,
+
+139
+00:06:09.170 --> 00:06:11.170
+and clusters may
+have periods where
+
+140
+00:06:11.170 --> 00:06:13.390
+all batch processing
+jobs are complete,
+
+141
+00:06:13.390 --> 00:06:16.900
+and the new batch doesn't
+start until later in the day.
+
+142
+00:06:16.900 --> 00:06:20.600
+Each autoscaler type is
+suitable in specific scenarios.
+
+143
+00:06:20.600 --> 00:06:22.620
+You should analyze the pros and
+
+144
+00:06:22.620 --> 00:06:25.460
+cons of each to find
+the best choice.
+
+145
+00:06:25.460 --> 00:06:28.180
+Using a combination
+of all three types
+
+146
+00:06:28.180 --> 00:06:31.720
+ensures that services run
+stabely at peak load times,
+
+147
+00:06:31.720 --> 00:06:34.985
+and costs are minimized
+in times of lower demand.
+
+148
+00:06:34.985 --> 00:06:37.315
+In this video,
+you'll learn that.
+
+149
+00:06:37.315 --> 00:06:39.850
+Auto-scaling enables
+scaling as needed at
+
+150
+00:06:39.850 --> 00:06:42.710
+the cluster or node
+level and the pod level.
+
+151
+00:06:42.710 --> 00:06:46.270
+You can auto-scale a
+deployment or a replica set.
+
+152
+00:06:46.270 --> 00:06:50.570
+Autoscaler types include
+horizontal pod or HPA,
+
+153
+00:06:50.570 --> 00:06:52.910
+vertical pod, or VPA,
+
+154
+00:06:52.910 --> 00:06:55.070
+and cluster or CA,
+
+155
+00:06:55.070 --> 00:06:58.290
+and a combination of all
+three autoscaler types
+
+156
+00:06:58.290 --> 00:07:02.770
+often provides the most
+optimized solution. A
