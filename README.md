@@ -20,7 +20,6 @@ This repository serves several purposes:
 
 - Self-Documentation: Keypoints and insights are captured based on my understanding. This self-documentation aids in reinforcing concepts, making it a valuable resource for personal review.
 
-## Quick Link
 
 ## Table of Contents
 
@@ -31,6 +30,15 @@ Professional Certificate - 8-modules series
 - Module 3: Managing Applications with Kubernetes
 - Module 4: The Kubernetes Ecosystem: OpenShift, Istio, etc.
 - Module 5: Final Assignment
+
+## Quick Links
+
+- Module 1: [Containers and Containerization](module01_containers-and-containerization/readme.md)
+- Module 2: [Kubernetes Basics](module02_kubernetes-basics/readme.md)
+- Module 3: [Managing Applications with Kubernetes](module03-managing-applications-with-k8s/readme.md)
+- Module 4: [The Kubernetes Ecosystem: OpenShift, Istio, etc.]() // TODO
+- Module 5: [Final Assignment]() // TODO
+
 
 ## What you'll learn
 
