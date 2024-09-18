@@ -49,23 +49,74 @@ We will use the environment variable directly in the YAML file.
 
   - Apply this development descriptor to our deployment and the application displays the string `Hello from the config file`.
   ![x](resources/05/01-configure-env-variables-03.png)
-- The result is excellent, but the message is hard-coded in the descriptor file. Let's change this situation by using a ConfigMap.
+
+- The result is excellent, but the message is hard-coded in the descriptor file.
 
 -> To change this situation, we will use a ConfigMap.
 
+### Configure ConfigMap string literal
+
 The simplest way to provide a ConfigMap: is to provide a key-value pair in the center of the ConfigMap command.
 
+**Step 1**: 
+
+![x](resources/05/02-configmap-string-literal-01.png)
+
+**Step 2**: After this first step, The second step is to tell our deployment about the new message variable and specify its location for pickup.
+
+To do that, add the `env` section in the deployment descriptor as shown 
+
+![x](resources/05/02-configmap-string-literal-02.png)
+
+Use the `valueFrom` attribute to point to the ConfigMap created in the first step.
+
+![x](resources/05/02-configmap-string-literal-03.png)
+
+In this case, the deployment will look for a key named `message` in the ConfigMap named `my-config`.
+
+![x](resources/05/02-configmap-string-literal-04.png)
+
+### Configure ConfigMap from properties file
+
+Another way to add the `message` variable in the ConfigMap is to use a file that contains all environment variables in the `key=value` format.
+
+Such a file is useful for adding many variables instead of listing those variables one by one on the command line.
+
+```shell
+>> cat my.properties
+1 MESSAGE=hello from the my.properties file
+```
+
+Then, create the ConfigMap by using the `--from-file` flag.
+
+Notice that the key is `my.properties` in the deployment descriptor section.
+
+```shell
+>> kubectl create configmap my-config --from-file=my.properties
+ConfigMap/my-config created
+```
+
+```shell
+>> kubectl describe Configmap my-config
+Name:         my-config
+Namespace:    default
+Labels:       <none>
+Annotations:  <none>
+Data
+===
+my.properties:
+----
+MESSAGE=hello from the my.properties file
+Events:  <none>
+```
+To use the ConfigMap in the `server.js` file, refer to it as `process.env.message.message`.
+
+![x](resources/05/03-configmap-properties-file-02.png)
 
 
-
-
-
-
-
-
-
-
-
+```shell
+kube
+```
 
 
 
