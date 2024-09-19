@@ -92,7 +92,7 @@ You will be giving the name `myapp` to your Kubernetes deployed application.
                 cpu: 20m
     ```
 
-    Replace `<your SN labs namespace>` with your actual SN lab's namespace.
+    Replace `sn-labs-nguyenthanhj` with your actual SN lab's namespace.
 
 4. Apply the deployment.
 
