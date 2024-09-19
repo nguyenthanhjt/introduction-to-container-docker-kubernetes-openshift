@@ -1,0 +1,543 @@
+WEBVTT
+
+1
+00:00:06.240 --> 00:00:08.940
+Welcome to Service Binding.
+
+2
+00:00:08.940 --> 00:00:10.620
+After watching this video,
+
+3
+00:00:10.620 --> 00:00:12.780
+you will be able to explain
+
+4
+00:00:12.780 --> 00:00:15.300
+the roles and goals
+of service binding.
+
+5
+00:00:15.300 --> 00:00:17.850
+Describe how to bind
+a Kubernetes cluster
+
+6
+00:00:17.850 --> 00:00:19.460
+to an external service.
+
+7
+00:00:19.460 --> 00:00:21.440
+Identify commands to retrieve
+
+8
+00:00:21.440 --> 00:00:23.830
+the secrets in your
+Kubernetes cluster,
+
+9
+00:00:23.830 --> 00:00:28.060
+and describe how to use
+service binding in apps.
+
+10
+00:00:28.060 --> 00:00:30.725
+What is service binding?
+
+11
+00:00:30.725 --> 00:00:33.150
+Service binding is
+the process needed to
+
+12
+00:00:33.150 --> 00:00:36.030
+consume external services
+or backing services,
+
+13
+00:00:36.030 --> 00:00:37.960
+including REST APIs,
+
+14
+00:00:37.960 --> 00:00:41.690
+databases, and event buses
+in our applications.
+
+15
+00:00:41.690 --> 00:00:45.030
+Service binding manages
+configuration and credentials
+
+16
+00:00:45.030 --> 00:00:48.490
+for back end services while
+protecting sensitive data.
+
+17
+00:00:48.490 --> 00:00:50.630
+In addition, service
+binding makes
+
+18
+00:00:50.630 --> 00:00:52.090
+service credentials available to
+
+19
+00:00:52.090 --> 00:00:54.310
+you automatically as a secret.
+
+20
+00:00:54.310 --> 00:00:56.990
+Service binding consumes
+the external service
+
+21
+00:00:56.990 --> 00:00:59.370
+by binding the application
+to a deployment.
+
+22
+00:00:59.370 --> 00:01:02.430
+Then the application code
+uses the credentials
+
+23
+00:01:02.430 --> 00:01:05.670
+from the binding and calls
+the corresponding service.
+
+24
+00:01:05.670 --> 00:01:09.130
+Here, you can see an
+architectural diagram that
+
+25
+00:01:09.130 --> 00:01:10.310
+illustrates the binding of
+
+26
+00:01:10.310 --> 00:01:13.390
+a Kubernetes cluster to
+an external service.
+
+27
+00:01:13.390 --> 00:01:15.870
+Next, let's learn the steps
+
+28
+00:01:15.870 --> 00:01:18.810
+required to bind the service
+to your application.
+
+29
+00:01:18.810 --> 00:01:21.770
+Let's use an IBM Cloud
+Service example.
+
+30
+00:01:21.770 --> 00:01:23.610
+Service binding quickly create
+
+31
+00:01:23.610 --> 00:01:26.490
+service credentials for
+an IBM Cloud service.
+
+32
+00:01:26.490 --> 00:01:28.870
+You create the service
+credentials using
+
+33
+00:01:28.870 --> 00:01:31.410
+IBM's Public Cloud
+service endpoint,
+
+34
+00:01:31.410 --> 00:01:33.290
+and then store or bind
+
+35
+00:01:33.290 --> 00:01:34.750
+your service credentials in
+
+36
+00:01:34.750 --> 00:01:37.270
+a Kubernetes secret
+in your cluster.
+
+37
+00:01:37.270 --> 00:01:41.085
+Here's how to bind an IBM
+Cloud service to your cluster.
+
+38
+00:01:41.085 --> 00:01:44.540
+First, you provision an
+instance of the service.
+
+39
+00:01:44.540 --> 00:01:47.800
+Then you bind the service
+to your cluster to create
+
+40
+00:01:47.800 --> 00:01:49.640
+service credentials
+for your service
+
+41
+00:01:49.640 --> 00:01:52.300
+that use the public
+cloud service endpoint.
+
+42
+00:01:52.300 --> 00:01:56.455
+Next, store the credentials
+in a Kubernetes secret.
+
+43
+00:01:56.455 --> 00:01:59.140
+Finally, you
+configure your app to
+
+44
+00:01:59.140 --> 00:02:02.220
+access the service credentials
+in the Kubernetes secret.
+
+45
+00:02:02.220 --> 00:02:04.160
+The IBM Cloud catalog
+
+46
+00:02:04.160 --> 00:02:06.520
+provides various
+services that range from
+
+47
+00:02:06.520 --> 00:02:09.500
+visual recognition to
+natural language processing
+
+48
+00:02:09.500 --> 00:02:11.340
+and creating chat bots.
+
+49
+00:02:11.340 --> 00:02:14.300
+We are using the tone
+analyzer service
+
+50
+00:02:14.300 --> 00:02:15.940
+to explain binding.
+
+51
+00:02:15.940 --> 00:02:18.600
+This service uses
+linguistic analysis
+
+52
+00:02:18.600 --> 00:02:20.900
+to detect tone in a given text.
+
+53
+00:02:20.900 --> 00:02:24.460
+The service provides
+an SDK in Java script.
+
+54
+00:02:24.460 --> 00:02:26.800
+You bind the service
+to the deployment
+
+55
+00:02:26.800 --> 00:02:29.700
+so that the credentials are
+automatically available.
+
+56
+00:02:29.700 --> 00:02:31.900
+The code then uses
+the credentials from
+
+57
+00:02:31.900 --> 00:02:35.605
+the binding and calls the
+tone analyzer service.
+
+58
+00:02:35.605 --> 00:02:38.040
+Now that you know the steps,
+
+59
+00:02:38.040 --> 00:02:39.855
+let's examine some code.
+
+60
+00:02:39.855 --> 00:02:41.870
+In the first step, provision
+
+61
+00:02:41.870 --> 00:02:43.390
+an instance of the service by
+
+62
+00:02:43.390 --> 00:02:44.970
+creating the service instance
+
+63
+00:02:44.970 --> 00:02:47.170
+using the command
+line interface.
+
+64
+00:02:47.170 --> 00:02:50.110
+You can also provision an
+instance of the service
+
+65
+00:02:50.110 --> 00:02:53.630
+by using the catalog on
+the IBM Cloud website.
+
+66
+00:02:53.630 --> 00:02:55.950
+In the second step, you bind
+
+67
+00:02:55.950 --> 00:02:57.910
+this newly created
+service instance to
+
+68
+00:02:57.910 --> 00:03:01.070
+your cluster by using the
+service bind command.
+
+69
+00:03:01.070 --> 00:03:03.830
+IBM Cloud Service
+Binding automatically
+
+70
+00:03:03.830 --> 00:03:07.450
+creates a Kubernetes secret
+with the service credentials.
+
+71
+00:03:07.450 --> 00:03:11.090
+The credentials of a service
+instance are base 64
+
+72
+00:03:11.090 --> 00:03:15.125
+encoded and stored inside your
+secret in the JSON format.
+
+73
+00:03:15.125 --> 00:03:18.200
+Now that the service is
+bound to your cluster,
+
+74
+00:03:18.200 --> 00:03:20.320
+here in Step 3,
+
+75
+00:03:20.320 --> 00:03:22.640
+you can verify your
+secret object.
+
+76
+00:03:22.640 --> 00:03:25.040
+The Get Secrets command shows
+
+77
+00:03:25.040 --> 00:03:27.505
+all the secrets in your
+Kubernetes cluster.
+
+78
+00:03:27.505 --> 00:03:29.280
+Or you can retrieve
+
+79
+00:03:29.280 --> 00:03:30.200
+the same secrets in
+
+80
+00:03:30.200 --> 00:03:32.440
+the Kubernetes dashboard
+user interface,
+
+81
+00:03:32.440 --> 00:03:35.655
+as well as on the IBM
+Cloud Kubernetes service.
+
+82
+00:03:35.655 --> 00:03:38.080
+To access the data
+in your secret,
+
+83
+00:03:38.080 --> 00:03:40.440
+choose one of the
+following options.
+
+84
+00:03:40.440 --> 00:03:43.400
+Mount the secret as a
+volume to your Pod,
+
+85
+00:03:43.400 --> 00:03:46.640
+based on the specifications
+provided in Step 1.
+
+86
+00:03:46.640 --> 00:03:49.740
+This action creates a
+JSON formatted file
+
+87
+00:03:49.740 --> 00:03:51.280
+named binding that is
+
+88
+00:03:51.280 --> 00:03:53.590
+stored in the Volume
+Mounts directory.
+
+89
+00:03:53.590 --> 00:03:57.000
+The binding file includes all
+information and credentials
+
+90
+00:03:57.000 --> 00:04:00.250
+required to access the
+IBM Cloud Service.
+
+91
+00:04:00.250 --> 00:04:04.660
+Or you can reference the secret
+in environment variables.
+
+92
+00:04:04.660 --> 00:04:08.120
+The environment variables
+binding, API key,
+
+93
+00:04:08.120 --> 00:04:12.300
+binding.username, and
+binding.password,
+
+94
+00:04:12.300 --> 00:04:16.740
+correspond to the API Key
+username and password of
+
+95
+00:04:16.740 --> 00:04:19.380
+the Watson Tone analyzer
+service instance
+
+96
+00:04:19.380 --> 00:04:21.380
+created in the previous step.
+
+97
+00:04:21.380 --> 00:04:24.950
+The displayed code snippet
+shows a sample node.js
+
+98
+00:04:24.950 --> 00:04:27.860
+application using
+the binding.API
+
+99
+00:04:27.860 --> 00:04:30.460
+Key, the binding.username,
+
+100
+00:04:30.460 --> 00:04:34.990
+and the binding.password
+environment variable inside an
+
+101
+00:04:34.990 --> 00:04:37.610
+express.JS application
+that will be
+
+102
+00:04:37.610 --> 00:04:40.770
+deployed to the IBM Cloud
+Kubernetes Service.
+
+103
+00:04:40.770 --> 00:04:42.590
+In this video, you'll learn
+
+104
+00:04:42.590 --> 00:04:44.710
+that binding an
+external service to
+
+105
+00:04:44.710 --> 00:04:46.570
+your deployment
+automatically provides
+
+106
+00:04:46.570 --> 00:04:49.500
+the credentials to use the
+service inside the code.
+
+107
+00:04:49.500 --> 00:04:52.090
+Credentials are stored
+as a secret that can be
+
+108
+00:04:52.090 --> 00:04:54.990
+consumed using volume
+mounts and volumes.
+
+109
+00:04:54.990 --> 00:04:57.870
+Binding manages configuration
+and credentials for
+
+110
+00:04:57.870 --> 00:05:01.170
+back end services while
+protecting sensitive data,
+
+111
+00:05:01.170 --> 00:05:03.130
+and you can configure
+your app to
+
+112
+00:05:03.130 --> 00:05:05.310
+use the credentials
+stored in the secret,
+
+113
+00:05:05.310 --> 00:05:07.690
+either by mounting the
+secret as a volume to
+
+114
+00:05:07.690 --> 00:05:09.550
+your pod or by referencing
+
+115
+00:05:09.550 --> 00:05:12.530
+the secret in
+environment variables.
