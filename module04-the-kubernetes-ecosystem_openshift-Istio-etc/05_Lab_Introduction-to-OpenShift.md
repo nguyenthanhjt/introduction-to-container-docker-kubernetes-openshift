@@ -38,6 +38,8 @@ When a webhook trigger is configured, it sets up an endpoint in OpenShift that l
 #### Example Workflow
 Below is a basic workflow diagram illustrating how a GitHub webhook trigger operates:
 
+![x](resources/05/01-Workflow-Trigger.png)
+
 **Workflow Explanation:**
 1. A developer pushes new code to the GitHub repository.
 2. GitHub sends a POST request to the OpenShift webhook endpoint.
@@ -58,6 +60,8 @@ When an image change trigger is set up, it monitors a specified container image 
 #### Example Workflow
 Here is a simple workflow diagram illustrating how an image change trigger functions:
 
+![x](resources/05/02-Image-Change-Triggers.png)
+
 **Workflow Explanation:**
 1. A new version of the base image (e.g., Node.js) is pushed to the image registry.
 2. The image change trigger detects the update.
@@ -77,6 +81,8 @@ Configuration change triggers monitor the BuildConfig resources in OpenShift. Wh
 
 #### Example Workflow
 Below is a basic workflow diagram showing how a configuration change trigger operates:
+
+![x](resources/05/03-Configuration-Change-Triggers.png)
 
 **Workflow Explanation:**
 1. A new BuildConfig resource is created or an existing one is updated.
