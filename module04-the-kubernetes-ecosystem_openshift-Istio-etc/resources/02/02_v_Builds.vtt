@@ -1,0 +1,833 @@
+WEBVTT
+
+1
+00:00:06.110 --> 00:00:10.400
+Welcome to introduction
+to Red Hat OpenShift.
+
+2
+00:00:10.400 --> 00:00:11.940
+After watching this video,
+
+3
+00:00:11.940 --> 00:00:14.020
+you will be able to explain what
+
+4
+00:00:14.020 --> 00:00:16.290
+OpenShift is and
+list its features,
+
+5
+00:00:16.290 --> 00:00:19.360
+describe OpenShift
+CLI, architecture,
+
+6
+00:00:19.360 --> 00:00:23.175
+and components, and compare
+OpenShift with Kubernetes.
+
+7
+00:00:23.175 --> 00:00:26.100
+OpenShift, developed and
+supported by Red Hat,
+
+8
+00:00:26.100 --> 00:00:29.135
+is an enterprise-ready
+Kubernetes container platform
+
+9
+00:00:29.135 --> 00:00:31.320
+built for the hybrid
+Cloud strategy.
+
+10
+00:00:31.320 --> 00:00:32.800
+It provides a consistent
+
+11
+00:00:32.800 --> 00:00:34.915
+application platform
+to manage hybrid,
+
+12
+00:00:34.915 --> 00:00:37.200
+multi-Cloud, and
+edge deployments.
+
+13
+00:00:37.200 --> 00:00:39.260
+It is built on the
+technological foundation
+
+14
+00:00:39.260 --> 00:00:41.740
+of Linux, containers,
+and automation.
+
+15
+00:00:41.740 --> 00:00:44.380
+It provides full stack
+automated operations
+
+16
+00:00:44.380 --> 00:00:45.840
+and self-service provisioning
+
+17
+00:00:45.840 --> 00:00:47.640
+for developers to
+efficiently move
+
+18
+00:00:47.640 --> 00:00:50.135
+ideas from development
+to production.
+
+19
+00:00:50.135 --> 00:00:53.160
+Besides container
+orchestration, it provides
+
+20
+00:00:53.160 --> 00:00:54.460
+additional tooling around
+
+21
+00:00:54.460 --> 00:00:56.690
+the complete life
+cycle of applications.
+
+22
+00:00:56.690 --> 00:00:58.950
+From build, to CI/CD,
+
+23
+00:00:58.950 --> 00:01:00.800
+to monitoring, and logs.
+
+24
+00:01:00.800 --> 00:01:02.920
+Both Kubernetes and OpenShift
+
+25
+00:01:02.920 --> 00:01:05.205
+are container
+orchestration platforms.
+
+26
+00:01:05.205 --> 00:01:08.635
+Kubernetes is a critical
+component of OpenShift.
+
+27
+00:01:08.635 --> 00:01:10.020
+OpenShift is used as
+
+28
+00:01:10.020 --> 00:01:12.000
+an extension of
+Kubernetes to provide
+
+29
+00:01:12.000 --> 00:01:14.120
+a more robust and
+comprehensive platform
+
+30
+00:01:14.120 --> 00:01:16.040
+for containerized applications.
+
+31
+00:01:16.040 --> 00:01:18.690
+Let's review the
+features of OpenShift.
+
+32
+00:01:18.690 --> 00:01:20.630
+Apps can scale to thousands of
+
+33
+00:01:20.630 --> 00:01:23.330
+instances across hundreds
+of nodes in seconds.
+
+34
+00:01:23.330 --> 00:01:25.650
+Flexible hybrid
+infrastructure options
+
+35
+00:01:25.650 --> 00:01:28.105
+simplify deployment
+and management.
+
+36
+00:01:28.105 --> 00:01:30.090
+Open source standards use
+
+37
+00:01:30.090 --> 00:01:32.335
+Kubernetes and Open
+Container Initiative,
+
+38
+00:01:32.335 --> 00:01:35.110
+OCI containers, which
+means development is
+
+39
+00:01:35.110 --> 00:01:36.610
+familiar and containers are
+
+40
+00:01:36.610 --> 00:01:39.305
+portable across
+multiple environments.
+
+41
+00:01:39.305 --> 00:01:42.745
+It includes a comprehensive
+set of developer tools,
+
+42
+00:01:42.745 --> 00:01:45.360
+multi-language
+support, command line,
+
+43
+00:01:45.360 --> 00:01:47.980
+IDE integrations, and more.
+
+44
+00:01:47.980 --> 00:01:50.940
+It supports over air
+platform upgrades,
+
+45
+00:01:50.940 --> 00:01:53.300
+and services from the
+operator hub can be
+
+46
+00:01:53.300 --> 00:01:56.580
+fully configured and deployed
+with one click upgrades.
+
+47
+00:01:56.580 --> 00:01:59.580
+Container and app
+builds, deployments,
+
+48
+00:01:59.580 --> 00:02:01.600
+scaling, and health management
+
+49
+00:02:01.600 --> 00:02:03.625
+are streamlined and automated.
+
+50
+00:02:03.625 --> 00:02:06.180
+OpenShift also
+enhances support for
+
+51
+00:02:06.180 --> 00:02:08.220
+smaller footprint topologies in
+
+52
+00:02:08.220 --> 00:02:10.360
+edge scenarios for
+better mapping,
+
+53
+00:02:10.360 --> 00:02:12.560
+connectivity, and availability.
+
+54
+00:02:12.560 --> 00:02:14.060
+It easily manages and
+
+55
+00:02:14.060 --> 00:02:17.385
+enforces policies across
+multiple clusters at scale.
+
+56
+00:02:17.385 --> 00:02:19.240
+It offers access controls,
+
+57
+00:02:19.240 --> 00:02:21.380
+networking and
+enterprise registry,
+
+58
+00:02:21.380 --> 00:02:24.060
+built in scanner, enhanced
+threat detection,
+
+59
+00:02:24.060 --> 00:02:28.060
+life cycle vulnerability
+management, and risk profiling.
+
+60
+00:02:28.060 --> 00:02:31.880
+OpenShift supports enterprise
+persistent storage solutions
+
+61
+00:02:31.880 --> 00:02:34.835
+for running stateful
+and stateless apps.
+
+62
+00:02:34.835 --> 00:02:37.500
+The OpenShift partner ecosystem
+
+63
+00:02:37.500 --> 00:02:40.120
+provides additional storage
+and network services,
+
+64
+00:02:40.120 --> 00:02:41.840
+as well as IDE,
+
+65
+00:02:41.840 --> 00:02:44.505
+CI, integrations, and more.
+
+66
+00:02:44.505 --> 00:02:46.350
+Let's compare the main aspects
+
+67
+00:02:46.350 --> 00:02:48.665
+between OpenShift
+and Kubernetes.
+
+68
+00:02:48.665 --> 00:02:49.970
+OpenShift is a product,
+
+69
+00:02:49.970 --> 00:02:52.670
+while Kubernetes is an
+open source project.
+
+70
+00:02:52.670 --> 00:02:54.710
+Installation on OpenShift has
+
+71
+00:02:54.710 --> 00:02:57.470
+limited options after
+the installation starts,
+
+72
+00:02:57.470 --> 00:02:59.370
+while Kubernetes is installable
+
+73
+00:02:59.370 --> 00:03:01.230
+on every Linux environment.
+
+74
+00:03:01.230 --> 00:03:03.070
+OpenShift is less flexible,
+
+75
+00:03:03.070 --> 00:03:05.270
+while Kubernetes
+is more flexible.
+
+76
+00:03:05.270 --> 00:03:08.750
+OpenShift is available online
+with Azure and dedicated,
+
+77
+00:03:08.750 --> 00:03:11.450
+while Kubernetes is
+available on EKS,
+
+78
+00:03:11.450 --> 00:03:14.930
+on AWS, GKE, on GCP,
+
+79
+00:03:14.930 --> 00:03:17.070
+and AKS on Azure.
+
+80
+00:03:17.070 --> 00:03:19.590
+OpenShift image streams
+provide better management,
+
+81
+00:03:19.590 --> 00:03:20.990
+while Kubernetes container
+
+82
+00:03:20.990 --> 00:03:23.140
+image management
+is not that easy.
+
+83
+00:03:23.140 --> 00:03:26.010
+OpenShift has a very
+strict security policy,
+
+84
+00:03:26.010 --> 00:03:28.605
+while Kubernetes security
+maintenance is easy.
+
+85
+00:03:28.605 --> 00:03:31.830
+OpenShift router objects
+permit external access,
+
+86
+00:03:31.830 --> 00:03:33.870
+while Kubernetes ingress objects
+
+87
+00:03:33.870 --> 00:03:36.830
+permit external access
+to Kubernetes clusters.
+
+88
+00:03:36.830 --> 00:03:38.590
+OpenShift uses the less
+
+89
+00:03:38.590 --> 00:03:40.710
+flexible deployment
+config command,
+
+90
+00:03:40.710 --> 00:03:44.110
+while Kubernetes uses more
+flexible deployment objects.
+
+91
+00:03:44.110 --> 00:03:46.450
+OpenShift provides a
+good user experience,
+
+92
+00:03:46.450 --> 00:03:48.750
+while Kubernetes
+requires extra tools
+
+93
+00:03:48.750 --> 00:03:50.625
+for a better user experience.
+
+94
+00:03:50.625 --> 00:03:52.880
+OpenShift provides
+good networking
+
+95
+00:03:52.880 --> 00:03:54.220
+solutions out of the box,
+
+96
+00:03:54.220 --> 00:03:56.840
+while Kubernetes provides
+third party plugins
+
+97
+00:03:56.840 --> 00:03:58.880
+when network solutions
+are unavailable.
+
+98
+00:03:58.880 --> 00:04:01.520
+OpenShift provides a
+good service catalog,
+
+99
+00:04:01.520 --> 00:04:03.640
+while Kubernetes
+offers less provision
+
+100
+00:04:03.640 --> 00:04:05.780
+for better services in clusters.
+
+101
+00:04:05.780 --> 00:04:08.840
+OpenShift has a user
+friendly web console layout
+
+102
+00:04:08.840 --> 00:04:10.885
+that is easy to
+learn for beginners,
+
+103
+00:04:10.885 --> 00:04:12.780
+while Kubernetes console layout
+
+104
+00:04:12.780 --> 00:04:14.905
+is difficult to
+learn for beginners.
+
+105
+00:04:14.905 --> 00:04:19.315
+The OpenShift CI and CD
+integrate with Jenkins,
+
+106
+00:04:19.315 --> 00:04:22.720
+while the Kubernetes CI
+and CD can be integrated,
+
+107
+00:04:22.720 --> 00:04:25.020
+but not with Jenkins.
+
+108
+00:04:25.020 --> 00:04:28.660
+OpenShift runs on top of
+a Kubernetes cluster,
+
+109
+00:04:28.660 --> 00:04:33.100
+with object data stored in
+the etcd key-value store.
+
+110
+00:04:33.100 --> 00:04:36.210
+It has a microservices-based
+architecture.
+
+111
+00:04:36.210 --> 00:04:39.590
+Its services are REST APIs,
+
+112
+00:04:39.590 --> 00:04:43.090
+which expose the core
+objects, and controllers,
+
+113
+00:04:43.090 --> 00:04:45.090
+which read the REST APIs,
+
+114
+00:04:45.090 --> 00:04:47.390
+apply changes to
+the other objects,
+
+115
+00:04:47.390 --> 00:04:50.570
+and report status or
+write back to the object.
+
+116
+00:04:50.570 --> 00:04:53.650
+They also maintain the
+cluster desired state.
+
+117
+00:04:53.650 --> 00:04:56.250
+Docker provides abstraction
+for packaging and
+
+118
+00:04:56.250 --> 00:04:59.730
+creating Linux-based
+lightweight container images.
+
+119
+00:04:59.730 --> 00:05:02.190
+Kubernetes provides
+cluster management
+
+120
+00:05:02.190 --> 00:05:05.200
+and orchestrates containers
+on multiple hosts.
+
+121
+00:05:05.200 --> 00:05:09.150
+OpenShift features add
+management of source code,
+
+122
+00:05:09.150 --> 00:05:11.690
+builds, and deployments
+for developers,
+
+123
+00:05:11.690 --> 00:05:13.610
+managing and promoting images
+
+124
+00:05:13.610 --> 00:05:15.950
+at scale as they flow
+through your system,
+
+125
+00:05:15.950 --> 00:05:18.390
+application management at scale,
+
+126
+00:05:18.390 --> 00:05:20.530
+team and user
+tracking management
+
+127
+00:05:20.530 --> 00:05:22.770
+of a large developer
+organization,
+
+128
+00:05:22.770 --> 00:05:26.910
+and networking infrastructure
+that supports the cluster.
+
+129
+00:05:26.910 --> 00:05:29.435
+In an OpenShift environment,
+
+130
+00:05:29.435 --> 00:05:31.400
+the Kubernetes master runs on
+
+131
+00:05:31.400 --> 00:05:33.955
+Red Hat Enterprise Linux CoreOS,
+
+132
+00:05:33.955 --> 00:05:37.350
+while worker nodes support
+Red Hat Enterprise Linux.
+
+133
+00:05:37.350 --> 00:05:40.120
+That is the Red Hat base layer.
+
+134
+00:05:40.120 --> 00:05:42.865
+Next is the Kubernetes
+architecture
+
+135
+00:05:42.865 --> 00:05:44.560
+and a set of services.
+
+136
+00:05:44.560 --> 00:05:47.770
+Cluster services include
+integrated monitoring,
+
+137
+00:05:47.770 --> 00:05:50.050
+a private registry
+within the cluster,
+
+138
+00:05:50.050 --> 00:05:53.120
+networking solutions,
+and many others.
+
+139
+00:05:53.120 --> 00:05:56.830
+Platform services help users
+manage their workloads.
+
+140
+00:05:56.830 --> 00:06:00.850
+Application services help
+users build Cloud native apps.
+
+141
+00:06:00.850 --> 00:06:04.270
+Developer services increase
+developer productivity.
+
+142
+00:06:04.270 --> 00:06:07.610
+OpenShift offers a set of
+command line interface or
+
+143
+00:06:07.610 --> 00:06:10.290
+CLI tools that
+lets users perform
+
+144
+00:06:10.290 --> 00:06:11.850
+various admin and development
+
+145
+00:06:11.850 --> 00:06:13.460
+operations from the terminal.
+
+146
+00:06:13.460 --> 00:06:16.490
+OpenShift CLI or OC is
+
+147
+00:06:16.490 --> 00:06:18.830
+the most commonly used CLI tool
+
+148
+00:06:18.830 --> 00:06:21.210
+to perform end-to-end
+operations.
+
+149
+00:06:21.210 --> 00:06:24.430
+It runs on Windows,
+Linux, or Mac.
+
+150
+00:06:24.430 --> 00:06:26.270
+OC lets you work
+
+151
+00:06:26.270 --> 00:06:29.430
+directly with project source
+code using command script,
+
+152
+00:06:29.430 --> 00:06:32.950
+script OpenShift operations,
+and manage projects
+
+153
+00:06:32.950 --> 00:06:34.390
+during restricted bandwidth or
+
+154
+00:06:34.390 --> 00:06:36.595
+availability of the web console.
+
+155
+00:06:36.595 --> 00:06:40.240
+Since OpenShift runs on top
+of a Kubernetes cluster,
+
+156
+00:06:40.240 --> 00:06:43.860
+a copy of kubectl is
+also included with OC.
+
+157
+00:06:43.860 --> 00:06:47.740
+The OC and kubectl binary
+offer the same capabilities,
+
+158
+00:06:47.740 --> 00:06:49.680
+but OC is further extended to
+
+159
+00:06:49.680 --> 00:06:51.880
+natively support
+OpenShift features,
+
+160
+00:06:51.880 --> 00:06:54.560
+such as deployment configs,
+
+161
+00:06:54.560 --> 00:06:57.740
+build configs, routes,
+image streams,
+
+162
+00:06:57.740 --> 00:06:59.565
+and image stream tags.
+
+163
+00:06:59.565 --> 00:07:02.520
+These are not available
+in standard Kubernetes.
+
+164
+00:07:02.520 --> 00:07:04.095
+OC also offers
+
+165
+00:07:04.095 --> 00:07:07.245
+an inbuilt login command
+for authentication.
+
+166
+00:07:07.245 --> 00:07:10.195
+Additional commands like new app
+
+167
+00:07:10.195 --> 00:07:11.990
+are also supported by OC,
+
+168
+00:07:11.990 --> 00:07:14.450
+which makes it easier
+to get new applications
+
+169
+00:07:14.450 --> 00:07:17.930
+started using existing source
+code or pre-built images.
+
+170
+00:07:17.930 --> 00:07:20.325
+In this video, you learn that
+
+171
+00:07:20.325 --> 00:07:22.110
+Kubernetes and OpenShift are
+
+172
+00:07:22.110 --> 00:07:24.275
+container orchestration
+platforms,
+
+173
+00:07:24.275 --> 00:07:26.390
+OpenShift is an enterprise-ready
+
+174
+00:07:26.390 --> 00:07:28.085
+Kubernetes container platform
+
+175
+00:07:28.085 --> 00:07:30.265
+built for open hybrid Cloud,
+
+176
+00:07:30.265 --> 00:07:32.835
+OpenShift runs on a
+Kubernetes cluster,
+
+177
+00:07:32.835 --> 00:07:36.810
+with object data stored in
+the etcd key-value store,
+
+178
+00:07:36.810 --> 00:07:39.720
+and OpenShift is easier to use,
+
+179
+00:07:39.720 --> 00:07:41.275
+integrates with Jenkins,
+
+180
+00:07:41.275 --> 00:07:44.460
+and has more services
+and features.
