@@ -1,4 +1,4 @@
-# Module 04 - Section 2 - Builds
+# Module 04 - Section 2 - OpenShift:Builds
 
 ## Introduction
 
