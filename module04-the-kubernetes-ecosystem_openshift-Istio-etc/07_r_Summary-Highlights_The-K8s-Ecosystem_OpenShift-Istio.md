@@ -1,7 +1,5 @@
 # Module 4 - Section 07 - Summary & Highlights: The Kubernetes Ecosystem: OpenShift, Istio, etc.
 
-Congratulations! You have completed this module. At this point, you know:
-
 - **OpenShift®** is an enterprise-ready Kubernetes container platform built for open hybrid cloud.
 - **OpenShift** is easier to use, integrates with Jenkins, and has more services and features.
 - **Custom Resource Definitions (CRDs)** extend the Kubernetes API.
