@@ -92,10 +92,26 @@ OpenShift's architecture includes:
 
 ## OpenShift CLI
 
-OpenShift offers a set of CLI tools, the most common being `oc`, which is used for admin and development operations. It runs on Windows, Linux, or Mac, and allows for working with project source code, scripting OpenShift operations, and managing projects.
+OpenShift offers a set of command-line interface (CLI) tools that let users perform various admin and development
+operations from the terminal.
 
-- OpenShift includes `kubectl` capabilities but extends `oc` for native OpenShift features like DeploymentConfigs, BuildConfigs, Routes, and ImageStreams.
-- Additional commands like `new-app` make it easier to get applications started with existing source code or images.
+The OpenShift CLI or `oc` is the most commonly used CLI tool to perform end-to-end operations. It runs on Windows, Linux,
+or Mac.
+
+`oc` lets you work directly with project source code using command scripts, script OpenShift operations, and manage
+projects during restricted bandwidth or availability of the web console.
+
+Since OpenShift runs on top of a Kubernetes cluster, a copy of `kubectl` is also included with `oc`.
+
+The `oc` and `kubectl` binary offer the same capabilities, but `oc` is further extended to natively support OpenShift
+features: that are not available in standard Kubernetes.
+- DeploymentConfigs
+- BuildConfigs
+- Routes
+- ImageStreams and ImageStreamTags.
+- Inbuilt log-in command for authentication.
+- Additional commands: like `new-app` are also supported by `oc`, which makes it easier to get new applications started
+  using existing source code or pre-built images.
 
 ## Conclusion - Recap
 
