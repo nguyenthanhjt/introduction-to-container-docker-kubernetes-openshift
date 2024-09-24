@@ -1,4 +1,4 @@
-# Module 04 - Section 3 - Reading: Automating Builds with Build Triggers in OpenShift
+# Module 04 - Section 5 - Reading: Automating Builds with Build Triggers in OpenShift
 
 ## Objectives
 After completing this reading, you will be able to:
