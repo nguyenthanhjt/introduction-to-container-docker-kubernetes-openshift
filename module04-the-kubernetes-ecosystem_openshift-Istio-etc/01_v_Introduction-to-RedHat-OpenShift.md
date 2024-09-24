@@ -1,5 +1,7 @@
 # Module 4 - Section 1 - Introduction to Red Hat OpenShift
 
+// TODO: add images
+
 ## Introduction
 
 In this section, we will learn about Red Hat OpenShift, a Kubernetes container platform:
