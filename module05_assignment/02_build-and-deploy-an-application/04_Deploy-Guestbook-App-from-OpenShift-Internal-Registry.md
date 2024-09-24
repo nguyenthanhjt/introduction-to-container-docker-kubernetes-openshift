@@ -1,0 +1,1 @@
+# Module 5 - Project: Deploy Guestbook App from OpenShift Internal Registry
