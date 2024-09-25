@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: myapp-daemonset
+  labels:
+    app: myapp
+spec:
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: myapp-container
+        image: us.icr.io/<your SN labs namespace>/myapp:v1
+        ports:
+        - containerPort: 3000
+          name: http
+      tolerations:
+      - key: node-role.kubernetes.io/master
+        effect: NoSchedule

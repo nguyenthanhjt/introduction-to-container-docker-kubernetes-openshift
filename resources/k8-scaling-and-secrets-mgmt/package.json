@@ -1,0 +1,15 @@
+{
+    "name": "myapp",
+    "version": "1.0.0",
+    "description": "My Node.js Application",
+    "main": "main.js",
+    "scripts": {
+      "start": "node main.js"
+    },
+    "author": "Your Name",
+    "license": "MIT",
+    "dependencies": {
+      "http": "^0.0.1"
+    }
+  }
+  
