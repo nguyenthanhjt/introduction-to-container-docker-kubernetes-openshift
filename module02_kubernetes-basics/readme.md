@@ -1,4 +1,4 @@
-# Module 1: Containers and Containerization
+# Module 2: Kubernetes Basics
 
 In week two, learn what container orchestration is. Then, explore how developers can use container orchestration to create and manage complex container environment development lifecycles. Kubernetes is currently the most popular container orchestration platform. You’ll examine key Kubernetes architectural components, including control plane components and controllers. Explore Kubernetes objects, and learn how specific Kubernetes objects such as Pods, ReplicaSets, and Deployments work. Then, learn how developers use the Kubernetes command line interface (CLI), or “kubectl” to manipulate objects, manage workloads in a Kubernetes cluster, and apply basic kubectl commands. You’ll be able to differentiate the benefits and drawbacks of using imperative and declarative commands. At the end of this module, you will use the kubectl CLI commands to create resources on an actual Kubernetes cluster. At the end of this week, you’ll use the Kubernetes CLI to create a Kubernetes pod, create a Kubernetes deployment, create a ReplicaSet and see Kubernetes load balancing in action.
 
