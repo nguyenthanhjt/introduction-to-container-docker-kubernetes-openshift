@@ -1,6 +1,18 @@
 # Module 1: Containers and Containerization
 
-Start your first week by learning about container concepts, features, use cases, and benefits. Building on your new knowledge of containers, you’ll learn what Docker does and discover why Docker is a winner with developers. You’ll learn what Docker is, become acquainted with Docker processes, and explore Docker’s underlying technology. Learn about how developers and organizations can benefit from using Docker and see which situations are challenging for using Docker. Next, learn how to build a container image using a Dockerfile, how to create a running container using that image, become familiar with the Docker command line interface (CLI), and explore frequently used Docker commands. You’ll become knowledgeable about Docker objects, Dockerfile commands, container image naming, and learn how Docker uses networks, storage, and plugins. Then, assimilate this knowledge when you see Docker architecture components in action and explore containerization using Docker. At the end of this first week, you’ll pull an image from a Docker Hub registry. You’ll run an image as a container using Docker, build and tag an image using a Dockerfile, and push that image to a registry. 
+Start your first week by learning about container concepts, features, use cases, and benefits. Building on your new knowledge of containers, you’ll learn what Docker does and discover why Docker is a winner with developers. 
+
+You’ll learn what Docker is, become acquainted with Docker processes, and explore Docker’s underlying technology. 
+
+Learn about how developers and organizations can benefit from using Docker and see which situations are challenging for using Docker. 
+
+Next, learn how to build a container image using a Dockerfile, how to create a running container using that image, become familiar with the Docker command line interface (CLI), and explore frequently used Docker commands. 
+
+You’ll become knowledgeable about Docker objects, Dockerfile commands, container image naming, and learn how Docker uses networks, storage, and plugins. 
+
+Then, assimilate this knowledge when you see Docker architecture components in action and explore containerization using Docker. 
+
+At the end of this first week, you’ll pull an image from a Docker Hub registry. You’ll run an image as a container using Docker, build and tag an image using a Dockerfile, and push that image to a registry. 
 
 **Learning Objectives**
 
