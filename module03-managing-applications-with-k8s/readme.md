@@ -1,4 +1,4 @@
-# Module 1: Containers and Containerization
+# Module 3: Managing Applications with Kubernetes
 
 Explore ReplicaSets, autoscaling, rolling updates, ConfigMaps, Secrets, and service bindings, and learn how you can use these capabilities to manage Kubernetes applications. You’ll learn how ReplicaSets scale applications to meet increasing demand, and how autoscaling creates dynamic demand-based scaling. You’ll see how to use rolling updates to publish application updates and roll back changes without interrupting the user experience. You’ll learn how to use ConfigMaps and Secrets to provide configuration variables and sensitive information to your deployments and to keep your code clean. At the end of the week, you’ll scale and update applications deployed in Kubernetes.
 
@@ -15,17 +15,17 @@ Explore ReplicaSets, autoscaling, rolling updates, ConfigMaps, Secrets, and serv
 
 ## Sections
 
-- [01. Container Orchestration](01_v_container-orchestration.md)
-- [02. Introduction to Kubernetes Objects](02_v_introduction-to-kubernetes.md)
-- [03. Kubernetes Architecture](03_v_kubernetes-architecture.md)
-- [04. Kubernetes Objects Part 01](04_v_kubernetes-objects-part-01.md)
-- [05. Kubernetes Objects Part 02](05_v_kubernetes-objects-part-02.md)
-- [06. Using kubectl](06_v_using-kubectl.md)
-- [07. Practice: Introduction to Kubernetes Objects](07_practice_introduction-to-kubernetes-objects.md)
-- [08. Ingress Objects vs Ingress Controller](08_ingress-objects-vs-ingress-controller.md)
-- [09. Kubernetes Antipatterns](09_kubernetes-antipatterns.md)
-- [10. Hands-on: Introduction to Kubernetes](10_hands-on_introduction-to-kubernetes.md)
-- [11. Summary Highlight: Kubernetes Basics](11_r_summary-highlight_kubernetes-basics.md)
-- [12. Cheatsheet: The kubectl CLI](13_module-2_cheatsheet_the-kubectl-cli)
-- [13. Graded Quiz: Kubernetes Basics](12_practice-quiz_kubernetes-basics)
-- [14. Glossary: Kubernetes Basics](15_glossary_kubernetes-basics)
+- [01. ReplicaSets](01_v_ReplicaSet.md)
+- [02. Autoscaling](02_v_AutoScaling.md)
+- [03. Deployment Strategies](03_v_Deployment-Strategies.md)
+- [04. Rolling Updates](04_v_Rolling-Updates.md)
+- [05. ConfigMaps](05_v_ConfigMaps-n-Secrets.md)
+- [06. Service Binding](06_v_Service-Binding.md)
+- [07. Hands-on: Managing Applications with Kubernetes](07_Hands-on_Scaling-n-Updating-Applications.md)
+- [08. Reading: Transforming Retail - The impact of K8s and Containerization](08_r_Transforming-Retail-The-impact-of-K8s-n-Containerization.md)
+- [09. Practice Lab: AutoScaling and Secret Management](09_practice_AutoScaling-n-Secret-Management.md)
+- [10. Summary and Highlights: Managing Applications with Kubernetes](10_Summary-Highlights_Managing-Applications-with-K8s.md)
+- [11. Practice Quiz: Managing Applications with K8s](11_practice-quiz_Managing-Application-with-K8s.md)
+- [12. Module 3 Cheatsheet: The kubectl CLI](12_Module-03_CheatSheet_The-kubectl-CLI.md)
+- [13. Graded Quiz: Managing Applications with K](13_graded-quiz_Managing-Applications-with-K8s.md)
+- [14. Glossary: Managing Applications with K8s](14_Module03-Glossary_Managing-Applications-with-K8s.md)
