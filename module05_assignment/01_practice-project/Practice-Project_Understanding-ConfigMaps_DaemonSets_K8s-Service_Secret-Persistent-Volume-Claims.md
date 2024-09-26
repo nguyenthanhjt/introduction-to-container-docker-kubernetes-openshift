@@ -6,6 +6,14 @@ In this lab, we will build and deploy an application to Kubernetes, then underst
 ## Table of Contents
 
 - [Objectives](#objectives)
+- [Main content](#main-content)
+  - [About the Docker file](#about-the-docker-file)
+  - [Build and deploy the application to Kubernetes](#build-and-deploy-the-application-to-kubernetes)
+  - [Exercise 1: ConfigMap](#exercise-1-configmap)
+  - [Exercise 2: DaemonSets](#exercise-2-daemonsets)
+  - [Exercise 3: Kubernetes Services](#exercise-3-kubernetes-services)
+  - [Exercise 4: Secrets](#exercise-4-secrets)
+  - [Exercise 5: Volumes and Persistent Volume Claims (PVCs)](#exercise-5-volumes-and-persistent-volume-claims-pvcs)
 
 ## Objectives
 
@@ -20,6 +28,7 @@ You will understand and create the following:
 
 [Reference: Full lab instruction - PDF file](resources/lab_understanding_config_maps-daemon_sets-kubernetes_services-secrets-persistent_volume_claims.pdf)
 
+---
 ## Main content
 
 ### About the Docker file
@@ -57,6 +66,7 @@ You will understand and create the following:
     * `EXPOSE 3000` exposes port 3000 of the container to allow connections from the outside.
     * `CMD ["node", "main.js"]` specifies the command to run when the container launches, which is to execute `node main.js`.
 
+---
 ### Build and deploy the application to Kubernetes
 
 The repository already has the code for the application as you have observed in the earlier section. We are just going to build the docker image and push to the registry.
@@ -207,6 +217,7 @@ You will be giving the name `myapp` to your Kubernetes deployed application.
 12. You should see the message `Hello from MyApp. Your app is up!`.
 13. Stop the server before proceeding further, by pressing `CTRL + C`.
 
+---
 ### Exercise 1: ConfigMap
 
 In this exercise, you will cover how to set up a ConfigMap to manage configuration data for the `myapp` application.
@@ -250,6 +261,7 @@ In this exercise, you will cover how to set up a ConfigMap to manage configurati
 
     * The output will indicate the presence of a ConfigMap named `myapp-config`, which contains two key-value pairs and was created moments ago.
 
+---
 ### Exercise 2: DaemonSets
 
 In this exercise, you'll create a DaemonSet to ensure that a pod runs on each node in the cluster, including the nodes where the `myapp` pods are deployed. Creating a DaemonSet enhances the availability and fault tolerance of your application (`myapp`) by ensuring that it runs on every node in the cluster, providing redundancy and load distribution.
@@ -347,6 +359,7 @@ In this exercise, you'll create a DaemonSet to ensure that a pod runs on each no
     - **NODE SELECTOR**: `<none>` means no node selector is specified.
     - **AGE**: `23s` indicates the age of the DaemonSet since its creation.
 
+---
 ### Exercise 3: Kubernetes Services
 
 In this exercise, you will create a Kubernetes Service to expose your application within the cluster.
@@ -431,8 +444,7 @@ In this exercise, you will create a Kubernetes Service to expose your applicatio
 
    > **Note**: Based on the availability of Cluster-IP addresses or ports, this value may differ in your lab environment.
 
-
-
+---
 ### Exercise 4: Secrets
 
 In this exercise, you will learn how to create and manage secrets in Kubernetes to securely store sensitive information, such as passwords, tokens, and SSH keys.
