@@ -20,7 +20,7 @@ spec:
         app: myapp
     spec:
       containers:
-      - image: us.icr.io/<your SN labs namespace>/myapp:v1
+      - image: nguyenthanhjt/myapp:v1
         imagePullPolicy: Always
         name: myapp
         ports:
